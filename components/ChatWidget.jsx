@@ -41,15 +41,11 @@ useEffect(() => {
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnnnybwq"; // Replace with your actual endpoint
 
 const sendMessage = async () => {
-  if ((!input.trim() && !file) || isTyping) return; // allow sending with just a file
-
-  // Create preview URL if file exists
-  const previewUrl = file ? URL.createObjectURL(file) : null;
+  if (!input.trim() || isTyping) return;
 
   const userMsg = {
     sender: "user",
     text: input.trim(),
-    ...(file && { file, previewUrl }),
   };
 
   setMessages((prev) => [...prev, userMsg]);
@@ -58,22 +54,21 @@ const sendMessage = async () => {
   setIsTyping(true);
 
   try {
-    // ✅ Create FormData
-    const formData = new FormData();
-    formData.append("email", userEmail);
-    formData.append("message", input || "(No message, file only)");
-    if (file) formData.append("attachment", file); // Formspree expects this key
+    // Send to Formspree
+    await fetch(FORMSPREE_ENDPOINT, {
+  method: "POST",
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    email: userEmail,
+    message: input,
+  }),
+});
 
-    const response = await fetch(FORMSPREE_ENDPOINT, {
-      method: "POST",
-      body: formData,
-    });
 
-    if (!response.ok) throw new Error("Failed to send");
-
-    // ✅ Only clear file AFTER successful submission
-    setFile(null);
-
+    // Bot Response
     const botReplies = [
       "Thank you for your message! 😊",
       "I’ve forwarded it to Christian’s email.",
@@ -90,12 +85,14 @@ const sendMessage = async () => {
   } catch (error) {
     setMessages((prev) => [
       ...prev,
-      { sender: "bot", text: "Oops! Failed to send the message. Please try again later." },
+      {
+        sender: "bot",
+        text: "Oops! Failed to send the message. Please try again later.",
+      },
     ]);
     setIsTyping(false);
   }
 };
-
 
 
 
@@ -264,16 +261,15 @@ const sendMessage = async () => {
               className="w-full text-sm px-3 py-2 rounded-md border border-gray-300 focus:outline-none"
             />
             <button
-              onClick={() => {
-                      const isValidGmail = userEmail.trim().endsWith("@gmail.com") && /^[^\s@]+@gmail\.com$/.test(userEmail);
-
+                    onClick={() => {
+                      const isValidGmail = /^[^\s@]+@gmail\.com$/i.test(userEmail.trim());
                       if (isValidGmail) {
                         setEmailSubmitted(true);
                       } else {
                         alert("Please enter a valid Gmail address (must end with @gmail.com).");
                       }
+                    }}
 
-              }}
               className="bg-yellow-400 hover:bg-yellow-500 text-black text-sm py-2 rounded-md font-semibold transition"
             >
               Continue
@@ -326,18 +322,7 @@ const sendMessage = async () => {
                   }}
                   className="hidden"
                 />
-                <button
-                  onClick={() => fileInputRef.current.click()}
-                  disabled={isTyping}
-                  title="Attach file"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-5 h-5 opacity-70 hover:opacity-100 transition disabled:opacity-40"
-                >
-                  <img
-                    src="/svg/attach-file.png"
-                    alt="Attach"
-                    className="w-full h-full object-contain"
-                  />
-                </button>
+              
               </div>
 
               <button
