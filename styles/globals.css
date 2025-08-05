@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* styles/globals.css */
+@font-face {
+  font-family: 'Termina';
+  src: url('/fonts/Termina-Regular.woff2') format('woff2'); /* Adjust path and formats */
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Termina', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+/* tailwind text stroke utility */
+.stroke-text {
+  -webkit-text-stroke: 0.6px white;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+}
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  80% {
+    width: 100%;
+  }
+  93% {
+    width: 100%; /* Hold the full text for ~3s */
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.animate-typewriter {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black;
+  animation: typewriter 6s steps(60, end) infinite;
+}
+.neon-text {
+  color: rgb(250, 204, 21);
+  text-shadow: 0 0 5px rgba(250, 204, 21, 0.7),
+               0 0 3px rgba(250, 204, 21, 0.6);
+}
+.shine-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shine-button:hover::before {
+  animation: shine 0.8s forwards;
+}
+
+@keyframes shine {
+  to {
+    left: 125%;
+  }
+}
+
+/* globals.css */
+.gradient-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gradient-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #facc15, #fbbf24, #f59e0b); /* yellow-400 via amber-300 to yellow-500 */
+  border-radius: 6px;
+}
+
+.gradient-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #facc15 #1a1a1a; /* fallback colors for Firefox */
+}
