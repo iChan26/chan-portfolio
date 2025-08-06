@@ -8,18 +8,14 @@ import Resume from "../components/Resume";
 import Portfolio from "../components/Portfolio";
 import ContactMe from "../components/ContactMe";
 import Footer from "../components/Footer";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
   const [loadingDone, setLoadingDone] = useState(false);
 
   // Lock scroll while loading
   useEffect(() => {
-    if (!loadingDone) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
+    document.body.style.overflow = loadingDone ? "auto" : "hidden";
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -38,11 +34,18 @@ export default function Home() {
       </Head>
 
       {/* Loader appears before any content */}
-      {!loadingDone && <Loader onFinish={() => setLoadingDone(true)} />}
+      <AnimatePresence>
+        {!loadingDone && <Loader onFinish={() => setLoadingDone(true)} />}
+      </AnimatePresence>
 
-      {/* Main content only after loading */}
+      {/* Fade-in Header & Main Content after loader */}
       {loadingDone && (
-        <main className="relative">
+        <motion.main
+          className="relative"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
           <Header />
           <Hero />
           <About />
@@ -50,7 +53,7 @@ export default function Home() {
           <Portfolio />
           <ContactMe />
           <Footer />
-        </main>
+        </motion.main>
       )}
     </>
   );
