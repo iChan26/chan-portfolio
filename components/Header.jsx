@@ -38,7 +38,9 @@ export default function Header() {
           ${scrolledUp ? "translate-y-0 opacity-100" : "-translate-y-24 opacity-0"}
         `}
       >
-        <div className="bg-[#1e1e1e] text-white px-6 py-3 rounded-full flex items-center justify-between border border-[#2c2c2c] shadow-lg transition-all duration-300">
+       <div className="glow-border">
+  <div className="text-white px-6 py-3 rounded-full flex items-center justify-between shadow-lg transition-all duration-300">
+
           <Link href="#top">
             <img
   src="/img/chan-logo.png"
@@ -66,6 +68,7 @@ export default function Header() {
             <FaArrowRight className="text-xs transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
           </button>
         </div>
+</div>
       </header>
 
       {/* Mobile Header (Bottom Nav) */}
@@ -74,7 +77,8 @@ export default function Header() {
           ${scrolledUp ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0"}
         `}
       >
-        <div className="bg-[#1e1e1e] text-white px-4 py-3 rounded-full border border-[#2c2c2c] shadow-md flex items-center justify-between">
+    <div className="glow-border">
+  <div className="text-white px-4 py-3 rounded-full shadow-md flex items-center justify-between">
           <nav className="flex items-center justify-between w-full text-xs font-medium">
             <a href="#about" className="flex flex-col items-center gap-1 hover:text-yellow-400 transition">
               <FaUser className="text-lg" />
@@ -99,6 +103,7 @@ export default function Header() {
             </a>
           </nav>
         </div>
+</div>
       </header>
     </>
   );

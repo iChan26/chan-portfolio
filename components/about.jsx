@@ -111,18 +111,19 @@ export default function About() {
                   </div>
         </div>
 
-        {/* Desktop Image */}
-        <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="w-56 h-60 sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-[40rem] lg:h-[40rem]"
-        >
-          <img
-            src="/img/about-profile.png"
-            alt="About Profile"
-            className="w-full h-full object-contain pointer-events-none"
-          />
-        </motion.div>
+   {/* Desktop Image (Hidden on Mobile) */}
+<motion.div
+  animate={{ y: [0, -10, 0] }}
+  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+  className="hidden md:block w-56 h-60 sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-[40rem] lg:h-[40rem]"
+>
+  <img
+    src="/img/about-profile.png"
+    alt="About Profile"
+    className="w-full h-full object-contain pointer-events-none"
+  />
+</motion.div>
+
 
       </motion.div>
     </section>

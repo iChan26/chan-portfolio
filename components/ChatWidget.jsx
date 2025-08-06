@@ -13,7 +13,7 @@ const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Hi there! I’m Chan Ai, a bot working for Christian. How can I assist you today?",
+      text: "Hey there! I’m Chan AI, Christian’s bot buddy. Leave him a message here and I’ll make sure he gets it!",
     },
   ]);
 
@@ -146,7 +146,7 @@ const sendMessage = async () => {
       {/* Header */}
       <div className="bg-gradient-to-br from-yellow-400 via-amber-300 to-yellow-500 text-black px-4 py-3 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/img/chatbot-profile.jpg" alt="Bot" className="w-8 h-8 rounded-full" />
+          <img src="/img/chatbot-profile.gif" alt="Bot" className="w-8 h-8 rounded-full" />
           <div>
             <p className="text-sm font-extrabold leading-none">Chan Ai</p>
             <p className="text-xs text-black/80">You can send me a message here..</p>
@@ -169,7 +169,7 @@ const sendMessage = async () => {
           >
             {msg.sender === "bot" && (
               <img
-                src="/img/chatbot-profile.jpg"
+                src="/img/chatbot-profile.gif"
                 alt="Bot"
                 className="w-6 h-6 rounded-full mt-1"
               />
@@ -235,7 +235,7 @@ const sendMessage = async () => {
         {isTyping && (
           <div className="flex items-start gap-2 justify-start">
             <img
-              src="/img/chatbot-profile.jpg"
+              src="/img/chatbot-profile.gif"
               alt="Bot"
               className="w-6 h-6 rounded-full mt-1"
             />

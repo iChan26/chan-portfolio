@@ -2,36 +2,45 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Loader({ onFinish }) {
-    const [isLoading, setIsLoading] = useState(true);
-    const [progress, setProgress] = useState(0);
-    const statusText = "Initializing Portfolio...";
+  const [progress, setProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const statusText = "Initializing Portfolio...";
+
   useEffect(() => {
+    // Progress bar logic
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
+          // Add small delay before fading out for smoother transition
+          setTimeout(() => {
+            setIsVisible(false); // triggers AnimatePresence exit
+          }, 300);
           return 100;
         }
         return prev + 1;
       });
     }, 30);
 
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-      onFinish();
-    }, 3100);
-
-    return () => {
-      clearTimeout(timeout);
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    // Once loader is fully hidden, trigger onFinish
+    if (!isVisible && progress === 100) {
+      const timeout = setTimeout(() => {
+        onFinish(); // Only finish AFTER fade-out
+      }, 800); // Match motion exit duration
+
+      return () => clearTimeout(timeout);
+    }
+  }, [isVisible, progress, onFinish]);
 
   return (
     <AnimatePresence>
-      {isLoading && (
+      {isVisible && (
         <motion.div
-          className="fixed inset-0 z-50 overflow-hidden text-white"
+          className="fixed inset-0 z-[9999] overflow-hidden text-white"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
@@ -45,7 +54,7 @@ export default function Loader({ onFinish }) {
             loop
             playsInline
           />
-          
+
           {/* Strong dark overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-80" />
 
@@ -80,14 +89,16 @@ export default function Loader({ onFinish }) {
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              <div className="mt-2 text-sm text-yellow-400 font-mono">{progress}%</div>
+              <div className="mt-2 text-sm text-yellow-400 font-mono">
+                {progress}%
+              </div>
             </div>
 
-                      {/* Typewriter synced to progress */}
-                      <p className="mt-4 text-sm text-gray-400 font-mono">
-                          {statusText.slice(0, Math.floor((progress / 100) * statusText.length))}
-                          <span className="border-r-2 border-gray-400 ml-1 animate-pulse" />
-                      </p>
+            {/* Typewriter synced to progress */}
+            <p className="mt-4 text-sm text-gray-400 font-mono">
+              {statusText.slice(0, Math.floor((progress / 100) * statusText.length))}
+              <span className="border-r-2 border-gray-400 ml-1 animate-pulse" />
+            </p>
           </div>
         </motion.div>
       )}
