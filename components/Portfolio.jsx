@@ -246,6 +246,7 @@ const allProjects = [
     description: "Marketing graphic for healthcare SaaS",
     category: "Digital Marketing",
     viewLink: "/img/Digital Marketing/Dental Billing Poster 2.png",
+    tools: ["photoshop","canva"]
   },
   {
     title: "Taco Time Restaurant",
