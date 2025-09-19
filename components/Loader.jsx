@@ -48,7 +48,7 @@ export default function Loader({ onFinish }) {
           {/* BW background video */}
           <video
             className="absolute inset-0 w-full h-full object-cover filter grayscale"
-            src="/vid/loader-bg.mp4"
+            src="/vid/loader-bg.webm"
             autoPlay
             muted
             loop
@@ -62,7 +62,7 @@ export default function Loader({ onFinish }) {
           <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4">
             {/* Gold Title */}
             <motion.img
-              src="/img/chan-logo.png"
+              src="/img/chan-logo.webp"
               alt="CHAN Logo"
               className="h-16 sm:h-24 object-contain"
               initial={{ opacity: 0, y: 20 }}

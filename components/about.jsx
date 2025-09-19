@@ -71,7 +71,7 @@ export default function About() {
               className="w-64 h-64 sm:w-72 sm:h-72"
             >
               <img
-                src="/img/about-profile.png"
+                src="/img/about-profile.webp"
                 alt="About Profile"
                 className="w-full h-full object-contain pointer-events-none"
               />
@@ -118,7 +118,7 @@ export default function About() {
   className="hidden md:block w-56 h-60 sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-[40rem] lg:h-[40rem]"
 >
   <img
-    src="/img/about-profile.png"
+    src="/img/about-profile.webp"
     alt="About Profile"
     className="w-full h-full object-contain pointer-events-none"
   />

@@ -24,25 +24,25 @@ const [modalImage, setModalImage] = useState(null);
 
   const experiences = [
     {
-      image: "/img/dure&dunelogo.jpg",
+      image: "/img/dure&dunelogo.webp",
       role: "Computer System Servicing",
       company: "Deor & Dune Academe School of Technology Inc.",
       year: "September 2019 - Feb 2020",
     },
     {
-      image: "/img/phrmdologo.jpg",
+      image: "/img/phrmdologo.webp",
       role: "Database Management",
       company: "PHRMDO, Misamis Occidental",
       year: "Feb - June 2024",
     },
     {
-      image: "/img/AgriMart.png",
+      image: "/img/AgriMart.webp",
       role: "Web Developer",
       company: "AgriMart - USTP - Mobod, Oroquieta City",
       year: "October 2021 - November 2024",
     },
     {
-      image: "/img/gcmlogo.jpg",
+      image: "/img/gcmlogo.webp",
       role: "Graphic Designer",
       company: "GCM Oroquieta",
       year: "March 2022 - January 2025",
@@ -54,7 +54,7 @@ const [modalImage, setModalImage] = useState(null);
       year: "2025",
     },
     {
-      image: "/img/I&A.png",
+      image: "/img/I&A.webp",
       role: "Full Stack Web Developer",
       company: "Glimbyte - I&A International (Remote from Albania, Ireland)",
       year: "2025",
@@ -75,13 +75,13 @@ const [modalImage, setModalImage] = useState(null);
 
   const education = [
     {
-      image: "/img/MU Logo.jpeg",
+      image: "/img/MU Logo.webp",
       year: "2023 - 2024",
       school: "Misamis University",
       course: "Bachelor of Science in Information Technology",
     },
     {
-      image: "/img/MONHS.jpeg",
+      image: "/img/MONHS.webp",
       year: "2019 - 2020",
       school: "Misamis Occidental National Highschool",
       course: "Information and Communication Technology",
@@ -90,19 +90,19 @@ const [modalImage, setModalImage] = useState(null);
 
   const achievements = [
     {
-      image: "/img/acheivements/nc2certificate.jpeg",
+      image: "/img/acheivements/nc2certificate.webp",
       title: "National Certificate II | Computer System Servicing",
       description: "Certified under Philippine TVET Competency System.",
       date: "February 05, 2020",
     },
     {
-      image: "/img/acheivements/phrmdoaward.jpeg",
+      image: "/img/acheivements/phrmdoaward.webp",
       title: "Certificate of Completion",
       description: "Completed 486-hour Work Immersion at PHRMDO.",
       date: "May 27, 2024",
     },
     {
-      image: "/img/acheivements/mkrotikcertificate.jpeg",
+      image: "/img/acheivements/mkrotikcertificate.webp",
       title: "Certificate of Participation",
       description: `Attended "Mikrotik: Managing Networks" at Misamis University.`,
       date: "May 13, 2023",

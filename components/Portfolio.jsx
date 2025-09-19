@@ -49,7 +49,7 @@ const toolIcons = {
 const allProjects = [
   {
     title: "I&A Jewelry",
-    image: "/img/Web Development/ia-international-square.png",
+    image: "/img/Web Development/ia-international-square.webp",
     description: "Luxury Redefined – Web Design",
     category: "Web Development",
     viewLink: "https://ia-international.vercel.app/",
@@ -57,15 +57,15 @@ const allProjects = [
   },
   {
     title: "UDS Logo",
-    image: "/img/Graphic Designs/UDS1.png",
+    image: "/img/Graphic Designs/UDS1.webp",
     description: "Brand identity for Unique Digital Solution",
     category: "Graphic Designs",
-    viewLink: "/img/Graphic Designs/UDS1.png",
+    viewLink: "/img/Graphic Designs/UDS1.webp",
     tools: ["photoshop"],
   },
   {
     title: "AgriMart E-commerce",
-    image: "/img/Web Development/AgriMart.png",
+    image: "/img/Web Development/AgriMart.webp",
     description: "Online vegetable store with admin panel",
     category: "Web Development",
     viewLink: "https://agrimart.website/",
@@ -73,23 +73,23 @@ const allProjects = [
   },
   {
     title: "Blue Sky Company SEO Performance",
-    image: "/img/SEO Works/Blue sky company SEO.png",
+    image: "/img/SEO Works/Blue sky company SEO.webp",
     description: "Before & After SEO Optimization Report",
     category: "SEO Works",
-    viewLink: "/img/SEO Works/Blue sky company SEO.png",
+    viewLink: "/img/SEO Works/Blue sky company SEO.webp",
     tools: ["googleanalytics", "yoast"]
   },
   {
     title: "Calming Bites",
-    image: "/img/Digital Marketing/CalmingBites.png",
+    image: "/img/Digital Marketing/CalmingBites.webp",
     description: "Product packaging and marketing design",
     category: "Digital Marketing",
-    viewLink: "/img/Digital Marketing/CalmingBites.png",
+    viewLink: "/img/Digital Marketing/CalmingBites.webp",
     tools: ["canva"]
   },
   {
     title: "Car Rental UI",
-    image: "/img/Web Development/indOz-cars-square.png",
+    image: "/img/Web Development/indOz-cars-square.webp",
     description: "Landing page UI for car rental",
     category: "Web Development",
     viewLink: "https://indoz-cars.vercel.app/",
@@ -97,31 +97,31 @@ const allProjects = [
   },
   {
     title: "New Sneakers Collection",
-    image: "/img/Graphic Designs/New Sneakers Collection 1.png",
+    image: "/img/Graphic Designs/New Sneakers Collection 1.webp",
     description: "Promotional graphic for Sneakers Collection",
     category: "Graphic Designs",
-    viewLink: "/img/Graphic Designs/New Sneakers Collection 1.png",
+    viewLink: "/img/Graphic Designs/New Sneakers Collection 1.webp",
     tools: ["canva"]
   },
   {
     title: "Dental Billing",
-    image: "/img/Digital Marketing/Dental Billing Poster 1.png",
+    image: "/img/Digital Marketing/Dental Billing Poster 1.webp",
     description: "Marketing graphic for healthcare SaaS",
     category: "Digital Marketing",
-    viewLink: "/img/Digital Marketing/Dental Billing Poster 1.png",
+    viewLink: "/img/Digital Marketing/Dental Billing Poster 1.webp",
      tools: ["canva", "photoshop"]
   },
    {
     title: "Brad's Services",
-    video: "/vid/Digital Marketing/SING LIKE NEVER BEFORE – TRANSFORM YOUR VOICE!.mp4",
+    video: "/vid/Digital Marketing/SING LIKE NEVER BEFORE – TRANSFORM YOUR VOICE!.webm",
     description: "Promoting Brad's Vocal Coaching Servicing",
     category: "Digital Marketing",
-    viewLink: "/vid/Digital Marketing/SING LIKE NEVER BEFORE – TRANSFORM YOUR VOICE!.mp4",
+    viewLink: "/vid/Digital Marketing/SING LIKE NEVER BEFORE – TRANSFORM YOUR VOICE!.webm",
      tools: ["aftereffects"]
   },
    {
     title: "Stephanie Blum Photography",
-    image: "/img/Web Development/stephanie blum photography.png",
+    image: "/img/Web Development/stephanie blum photography.webp",
     description: "Blogsite for Stephanie Blum",
     category: "Web Development",
     viewLink: "https://www.stephanieblumphoto.com/",
@@ -129,39 +129,39 @@ const allProjects = [
   },
   {
     title: "Blue Sky Heating and Air",
-    image: "/img/Digital Marketing/Blue Sky Heating and Air LLC.png",
+    image: "/img/Digital Marketing/Blue Sky Heating and Air LLC.webp",
     description: "Promoting Blue Sky Heating and Air",
     category: "Digital Marketing",
-    viewLink: "/img/Digital Marketing/Blue Sky Heating and Air LLC.png",
+    viewLink: "/img/Digital Marketing/Blue Sky Heating and Air LLC.webp",
      tools: ["canva"]
   },
   {
     title: "Brad's Services",
-    video: "/vid/Digital Marketing/Radical Vocal Breakthrough with Brad Chapman.mp4",
+    video: "/vid/Digital Marketing/Radical Vocal Breakthrough with Brad Chapman.webm",
     description: "Promoting Brad's Vocal Coaching Servicing",
     category: "Digital Marketing",
-    viewLink: "/vid/Digital Marketing/Radical Vocal Breakthrough with Brad Chapman.mp4",
+    viewLink: "/vid/Digital Marketing/Radical Vocal Breakthrough with Brad Chapman.webm",
     tools: ["aftereffects"]
   },
   {
     title: "Queuedial Company SEO Performance",
-    image: "/img/SEO Works/Queuedial SEO.png",
+    image: "/img/SEO Works/Queuedial SEO.webp",
     description: "Before & After SEO Optimization Report",
     category: "SEO Works",
-    viewLink: "/img/SEO Works/Queuedial SEO.png",
+    viewLink: "/img/SEO Works/Queuedial SEO.webp",
     tools: ["googleanalytics", "yoast"]
   },
   {
     title: "Rita's Marketing",
-    video: "/vid/Digital Marketing/Rita's Marketing.mp4",
+    video: "/vid/Digital Marketing/Rita's Marketing.webm",
     description: "Promoting Rita's Products",
     category: "Digital Marketing",
-    viewLink: "/vid/Digital Marketing/Rita's Marketing.mp4",
+    viewLink: "/vid/Digital Marketing/Rita's Marketing.webm",
     tools: ["canva"]
   },
   {
     title: "EuroElektra - Empowered by Innovation",
-    image: "/img/Web Development/EuroElektra.png",
+    image: "/img/Web Development/EuroElektra.webp",
     description: "EuroElektra – Web Development",
     category: "Web Development",
     viewLink: "https://euroelektra.vercel.app/",
@@ -169,15 +169,15 @@ const allProjects = [
   },
   {
     title: "Skin & Coat",
-    image: "/img/Digital Marketing/Skin&Coat.png",
+    image: "/img/Digital Marketing/Skin&Coat.webp",
     description: "Product packaging and marketing design",
     category: "Digital Marketing",
-    viewLink: "/img/Digital Marketing/Skin&Coat.png",
+    viewLink: "/img/Digital Marketing/Skin&Coat.webp",
     tools: ["canva"]
   },
   {
     title: "Zen Diamond - Luxury",
-    image: "/img/Web Development/zen diamond.png",
+    image: "/img/Web Development/zen-diamond.webp",
     description: "Zen Diamond – Web Development",
     category: "Web Development",
     viewLink: "https://ia-international.com/zenuk/",
@@ -185,23 +185,23 @@ const allProjects = [
   },
   {
     title: "GCM Youth Fellowship",
-    image: "/img/Graphic Designs/GCM Event 1.jpg",
+    image: "/img/Graphic Designs/GCM Event 1.webp",
     description: "Poster Event for GCM",
     category: "Digital Marketing",
-    viewLink: "/img/Graphic Designs/GCM Event 1.jpg",
+    viewLink: "/img/Graphic Designs/GCM Event 1.webp",
     tools: ["canva", "photoshop"]
   },
   {
     title: "Blue Sky Heating and Air LLC",
-    video: "/vid/Digital Marketing/Blue Sky Heating and Air LLC.mp4 ",
+    video: "/vid/Digital Marketing/Blue Sky Heating and Air LLC.webm ",
     description: "Promoting Blue Sky Heating and Air LLC",
     category: "Digital Marketing",
-    viewLink: "/vid/Digital Marketing/Blue Sky Heating and Air LLC.mp4",
+    viewLink: "/vid/Digital Marketing/Blue Sky Heating and Air LLC.webm",
      tools: ["canva"]
   },
   {
     title: "Dad's Wallet Finance",
-    image: "/img/Web Development/dadswallet.png",
+    image: "/img/Web Development/dadswallet.webp",
     description: "Dad's Wallet – Web Development/SEO",
     category: "Web Development",
     viewLink: "https://dadswallet.com.au/",
@@ -209,32 +209,32 @@ const allProjects = [
   },    
   {
     title: "Brad's Services",
-    video: "/vid/Digital Marketing/Your Voice, Your Power – Train with Brad Chapman.mp4",
+    video: "/vid/Digital Marketing/Your Voice, Your Power – Train with Brad Chapman.webm",
     description: "Promoting Brad's Vocal Coaching Servicing",
     category: "Digital Marketing",
-    viewLink: "/vid/Digital Marketing/Your Voice, Your Power – Train with Brad Chapman.mp4",
+    viewLink: "/vid/Digital Marketing/Your Voice, Your Power – Train with Brad Chapman.webm",
     tools: ["aftereffects"]
   },
   {
     title: "UDS Logo",
-    image: "/img/Graphic Designs/UDS2.png",
+    image: "/img/Graphic Designs/UDS2.webp",
     description: "Brand identity for Unique Digital Solution",
     category: "Graphic Designs",
-    viewLink: "/img/Graphic Designs/UDS2.png",
+    viewLink: "/img/Graphic Designs/UDS2.webp",
     tools: ["photoshop"]
     
   },
   {
     title: "New Sneakers Collection",
-    image: "/img/Graphic Designs/New Sneakers Collection 2.png",
+    image: "/img/Graphic Designs/New Sneakers Collection 2.webp",
     description: "Promotional graphic for Sneakers Collection",
     category: "Graphic Designs",
-    viewLink: "/img/Graphic Designs/New Sneakers Collection 2.png",
+    viewLink: "/img/Graphic Designs/New Sneakers Collection 2.webp",
     tools: ["canva"]
   },
   {
     title: "Point 1 Shop Retail",
-    image: "/img/Web Development/point1ca.png",
+    image: "/img/Web Development/point1ca.webp",
     description: "Point 1 Shop Retail – Web Development/SEO",
     category: "Web Development",
     viewLink: "https://point1.ca/",
@@ -242,15 +242,15 @@ const allProjects = [
   },   
   {
     title: "Dental Billing",
-    image: "/img/Digital Marketing/Dental Billing Poster 2.png",
+    image: "/img/Digital Marketing/Dental Billing Poster 2.webp",
     description: "Marketing graphic for healthcare SaaS",
     category: "Digital Marketing",
-    viewLink: "/img/Digital Marketing/Dental Billing Poster 2.png",
+    viewLink: "/img/Digital Marketing/Dental Billing Poster 2.webp",
     tools: ["photoshop","canva"]
   },
   {
     title: "Taco Time Restaurant",
-    image: "/img/Web Development/tacotime.png",
+    image: "/img/Web Development/tacotime.webp",
     description: "Taco Time – Web Development",
     category: "Web Development",
     viewLink: "https://tacotimesd.com/",
@@ -258,7 +258,7 @@ const allProjects = [
   },  
   {
     title: "Small Business Enterprise Center",
-    image: "/img/Web Development/Small Business.png",
+    image: "/img/Web Development/Small Business.webp",
     description: "Small Business – Web Development",
     category: "Web Development",
     viewLink: "https://app.gohighlevel.com/v2/preview/Il9wA6FxqN6HxzSGT9bk",
@@ -266,27 +266,27 @@ const allProjects = [
   },   
   {
     title: "Elite Drip",
-    video: "/vid/Digital Marketing/Facebook ads Animated.mp4",
+    video: "/vid/Digital Marketing/Facebook ads Animated.webm",
     description: "Promoting Elite Drip's Clothes",
     category: "Digital Marketing",
-    viewLink: "/vid/Digital Marketing/Facebook ads Animated.mp4",
+    viewLink: "/vid/Digital Marketing/Facebook ads Animated.webm",
     tools: ["canva"]
   },
   {
     title: "UDS Logo",
-    image: "/img/Graphic Designs/UDS3.png",
+    image: "/img/Graphic Designs/UDS3.webp",
     description: "Brand identity for Unique Digital Solution",
     category: "Graphic Designs",
-    viewLink: "/img/Graphic Designs/UDS3.png",
+    viewLink: "/img/Graphic Designs/UDS3.webp",
     tools: ["photoshop"]
     
   },
    {
     title: "Artificial Intelligence Logo",
-    image: "/img/Graphic Designs/AI Logo.png",
+    image: "/img/Graphic Designs/AI Logo.webp",
     description: "Logo Brand for Artificial Intelligence",
     category: "Graphic Designs",
-    viewLink: "/img/Graphic Designs/AI Logo.png",
+    viewLink: "/img/Graphic Designs/AI Logo.webp",
     tools: ["photoshop"]
     
   },

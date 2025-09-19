@@ -8,7 +8,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import Link from 'next/link';
-import { motion } from "framer-motion"; // ✨ Import motion
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [scrolledUp, setScrolledUp] = useState(true);
@@ -31,8 +31,8 @@ export default function Header() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: -100 }}   // Start way higher (off-screen)
+      animate={{ opacity: 1, y: 0 }}      // Drop down into place
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Desktop Header */}
@@ -45,7 +45,7 @@ export default function Header() {
           <div className="text-white px-6 py-3 rounded-full flex items-center justify-between shadow-lg transition-all duration-300">
             <Link href="#top">
               <img
-                src="/img/chan-logo.png"
+                src="/img/chan-logo.webp"
                 alt="CHAN Logo"
                 className="h-8 sm:h-10 object-contain"
               />

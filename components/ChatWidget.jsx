@@ -332,7 +332,7 @@ const sendMessage = async () => {
                 className="w-6 h-6 opacity-80 hover:opacity-100 transition disabled:opacity-40"
               >
                 <img
-                  src="/svg/send-mail.png"
+                  src="/svg/send-mail.svg"
                   alt="Send"
                   className="w-full h-full object-contain"
                 />

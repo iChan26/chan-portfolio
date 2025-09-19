@@ -10,7 +10,7 @@ const Footer = () => {
   <div>
  <Link href="#top">
   <img
-    src="/img/chan-logo.png"
+    src="/img/chan-logo.webp"
     alt="Chan Logo"
     className="w-28 mb-4 cursor-pointer"
   />

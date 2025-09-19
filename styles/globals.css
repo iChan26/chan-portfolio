@@ -18,6 +18,7 @@ html {
 }
 body {
   font-family: 'Termina', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  background-color: #000;
 }
 /* tailwind text stroke utility */
 .stroke-text {
