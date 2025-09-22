@@ -1,25 +1,31 @@
 import React, { useState } from "react";
-import { FaRegCalendarAlt } from "react-icons/fa";
 import {
   SiHtml5,
   SiCss3,
   SiJavascript,
   SiNextdotjs,
+  SiReact,
   SiTailwindcss,
   SiPhp,
   SiMysql,
   SiWordpress,
+  SiShopify,
+  SiSquarespace,
+  SiWix,
+  SiWebflow,
   SiFigma,
   SiCanva,
   SiAdobephotoshop,
   SiAdobeaftereffects,
 } from "react-icons/si";
 import { FiLayers } from "react-icons/fi";
+import { FaRegCalendarAlt } from "react-icons/fa";
 
 
 const Resume = () => {
   const [activeTab, setActiveTab] = useState("skills");
-const [modalImage, setModalImage] = useState(null);
+  const [modalImage, setModalImage] = useState(null);
+
   const tabs = ["Skills", "Experience", "Education", "Achievements"];
 
   const experiences = [
@@ -110,20 +116,32 @@ const [modalImage, setModalImage] = useState(null);
   ];
 
   const skills = [
-    { name: "HTML", icon: <SiHtml5 className="text-black text-xl" /> },
-    { name: "CSS", icon: <SiCss3 className="text-black text-xl" /> },
-    { name: "JavaScript", icon: <SiJavascript className="text-black text-xl" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="text-black text-xl" /> },
-    { name: "Tailwind", icon: <SiTailwindcss className="text-black text-xl" /> },
-    { name: "PHP", icon: <SiPhp className="text-black text-xl" /> },
-    { name: "MySQL", icon: <SiMysql className="text-black text-xl" /> },
-    { name: "WordPress", icon: <SiWordpress className="text-black text-xl" /> },
-    { name: "GHL", icon: <FiLayers className="text-black text-xl" /> },
-    { name: "Figma", icon: <SiFigma className="text-black text-xl" /> },
-    { name: "Canva", icon: <SiCanva className="text-black text-xl" /> },
-    { name: "Photoshop", icon: <SiAdobephotoshop className="text-black text-xl" /> },
-    { name: "After Effects", icon: <SiAdobeaftereffects className="text-black text-xl" /> },
-  ];
+  // Frontend
+  { name: "HTML", icon: <SiHtml5 className="text-black text-xl" /> },
+  { name: "CSS", icon: <SiCss3 className="text-black text-xl" /> },
+  { name: "JavaScript", icon: <SiJavascript className="text-black text-xl" /> },
+  { name: "React", icon: <SiReact className="text-black text-xl" /> },
+  { name: "Next.js", icon: <SiNextdotjs className="text-black text-xl" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="text-black text-xl" /> },
+
+  // Backend
+  { name: "PHP", icon: <SiPhp className="text-black text-xl" /> },
+  { name: "MySQL", icon: <SiMysql className="text-black text-xl" /> },
+
+  // CMS / Builders
+  { name: "WordPress", icon: <SiWordpress className="text-black text-xl" /> },
+  { name: "Shopify", icon: <SiShopify className="text-black text-xl" /> },
+  { name: "Wix", icon: <SiWix className="text-black text-xl" /> },
+  { name: "Squarespace", icon: <SiSquarespace className="text-black text-xl" /> },
+  { name: "Webflow", icon: <SiWebflow className="text-black text-xl" /> },
+  { name: "GHL", icon: <FiLayers className="text-black text-xl" /> },
+
+  // Design Tools
+  { name: "Figma", icon: <SiFigma className="text-black text-xl" /> },
+  { name: "Canva", icon: <SiCanva className="text-black text-xl" /> },
+  { name: "Photoshop", icon: <SiAdobephotoshop className="text-black text-xl" /> },
+  { name: "After Effects", icon: <SiAdobeaftereffects className="text-black text-xl" /> },
+];
 
   return (
     

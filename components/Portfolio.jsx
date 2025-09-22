@@ -3,6 +3,7 @@ import { FaEye, FaCode } from "react-icons/fa";
 import { FaFigma, FaReact } from "react-icons/fa";
 import {
   SiNextdotjs,
+  SiReact,
   SiTailwindcss,
   SiVercel,
   SiAdobephotoshop,
@@ -19,11 +20,13 @@ import {
   SiSquarespace,
    SiElementor,
     SiWordpress,
+    SiShopify
 } from "react-icons/si";
 import { FiLayers } from "react-icons/fi";
 
 const toolIcons = {
   nextjs: <SiNextdotjs className="text-lg" title="Next.js" />,
+  react: <SiReact className="text-lg" title="React" />,
   tailwind: <SiTailwindcss className="text-lg" title="Tailwind CSS" />,
   vercel: <SiVercel className="text-lg" title="Vercel" />,
   photoshop: <SiAdobephotoshop className="text-lg" title="Photoshop" />,
@@ -41,6 +44,7 @@ const toolIcons = {
     elementor: <SiElementor className="text-lg" title="Elementor" />,
     wordpress: <SiWordpress className="text-lg" title="WordPress" />,
     highlevel: <FiLayers className="text-lg" title="HighLevel" />,
+    shopify: <SiShopify className="text-lg" title="Shopify" />,
 };
 
 
@@ -64,12 +68,12 @@ const allProjects = [
     tools: ["photoshop"],
   },
   {
-    title: "AgriMart E-commerce",
-    image: "/img/Web Development/AgriMart.webp",
-    description: "Online vegetable store with admin panel",
+    title: "Border DME - Medical Equipment",
+    image: "/img/Web Development/BorderDME.webp",
+    description: "Medical equipment Informational Site - Web Development",
     category: "Web Development",
-    viewLink: "https://agrimart.website/",
-    tools: ["javascript", "php", "hostinger"]
+    viewLink: "https://borderdme.wpcomstaging.com/",
+    tools: ["wordpress", "elementor", "javascript"]
   },
   {
     title: "Blue Sky Company SEO Performance",
@@ -93,7 +97,7 @@ const allProjects = [
     description: "Landing page UI for car rental",
     category: "Web Development",
     viewLink: "https://indoz-cars.vercel.app/",
-    tools: ["nextjs", "tailwind", "vercel"]
+    tools: ["react", "tailwind", "vercel"]
   },
   {
     title: "New Sneakers Collection",
@@ -249,12 +253,12 @@ const allProjects = [
     tools: ["photoshop","canva"]
   },
   {
-    title: "Taco Time Restaurant",
-    image: "/img/Web Development/tacotime.webp",
-    description: "Taco Time – Web Development",
+    title: "Border Store - Medical Equipment",
+    image: "/img/Web Development/Border Store.webp",
+    description: "Medical Equipment Store – Web Development",
     category: "Web Development",
-    viewLink: "https://tacotimesd.com/",
-     tools: ["highlevel", "javascript"]
+    viewLink: "https://www.borderdme.com/",
+     tools: ["shopify", "html", "javascript"]
   },  
   {
     title: "Small Business Enterprise Center",
@@ -262,7 +266,7 @@ const allProjects = [
     description: "Small Business – Web Development",
     category: "Web Development",
     viewLink: "https://app.gohighlevel.com/v2/preview/Il9wA6FxqN6HxzSGT9bk",
-    tools: ["highlevel", "javascript"]
+    tools: ["highlevel", "html", "javascript"]
   },   
   {
     title: "Elite Drip",
