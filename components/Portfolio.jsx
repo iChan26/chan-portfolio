@@ -307,124 +307,124 @@ const PortfolioSection = () => {
       : allProjects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="portfolio" className="bg-[#0d0c0c] font-mono py-20 px-6">
-      <div className="max-w-screen-xl mx-auto text-center">
-        <h2 className="text-black text-3xl sm:text-4xl lg:text-6xl font-extrabold mb-10">
-          <span className="text-white font-extrabold ">My</span>{" "}
-          <span className="text-yellow-500 font-extrabold">Portfolio</span>
-        </h2>
+   <section id="portfolio" className="bg-[#0d0c0c] font-mono py-20 px-6">
+  <div className="max-w-screen-xl mx-auto text-center">
+    <h2 className="text-black text-3xl sm:text-4xl lg:text-6xl font-extrabold mb-10">
+      <span className="text-white font-extrabold">My</span>{" "}
+      <span className="text-yellow-500 font-extrabold">Portfolio</span>
+    </h2>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 text-sm sm:text-base font-semibold">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-full border-b-2 transition-all duration-200 ${
-                activeCategory === category
-                  ? "border-yellow-500 text-yellow-500"
-                  : "border-transparent text-white hover:text-yellow-500"
-              }`}
+    {/* Category Tabs */}
+    <div className="flex flex-wrap justify-center gap-4 mb-12 text-sm sm:text-base font-semibold">
+      {categories.map((category) => (
+        <button
+          key={category}
+          onClick={() => setActiveCategory(category)}
+          className={`px-4 py-2 rounded-full border-b-2 transition-all duration-200 ${
+            activeCategory === category
+              ? "border-yellow-500 text-yellow-500"
+              : "border-transparent text-white hover:text-yellow-500"
+          }`}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+
+    {/* Projects Grid */}
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+      {filteredProjects.map((project, index) => (
+        <div
+          key={index}
+          className="relative bg-white rounded-lg overflow-hidden border shadow-lg group transition-transform duration-300 hover:scale-[1.02]"
+          style={{ height: "100%" }}
+        >
+          {/* Media area */}
+          <div className="relative z-10 h-[350px]">
+            {project.video ? (
+              <video
+                src={project.video}
+                className="w-full h-full object-cover transition duration-300"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            ) : (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition duration-300"
+              />
+            )}
+
+            {/* dark overlay while hovering */}
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 z-10" />
+
+            {/* ---------- Combined bottom panel (title + description) ---------- */}
+            {/* 
+              translate-y-[70%] hides the lower portion (leaving the title visible).
+              On hover it translates to 0, bringing both title & description up together.
+              Adjust the translate-y percentage if you need more/less initial title exposure.
+            */}
+            <div
+              className="absolute left-0 right-0 bottom-0 z-20
+                         transform translate-y-[70%] group-hover:translate-y-0
+                         transition-transform duration-300"
             >
-              {category}
-            </button>
-          ))}
+              {/* Container background + content */}
+              <div className="bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 text-black px-4 py-3 font-bold text-base">
+                {/* Title (part of the same panel) */}
+                {project.title}
+              </div>
+
+              <div className="bg-[#1e1e1e] px-4 pb-5 pt-4">
+                {/* Description */}
+                <p className="text-white text-sm mb-4 text-center">
+                  {project.description}
+                </p>
+
+                {/* Buttons */}
+                <div className="flex gap-3 w-full justify-center">
+                  {project.tools && project.tools.length > 0 && (
+                    <div className="flex-1 max-w-[130px]">
+                      <div className="flex items-center justify-center gap-1 bg-black text-xs py-1.5 px-4 rounded-full w-full h-9 transition">
+                        {project.tools.map((tool, i) => (
+                          <span key={i} className="text-white">
+                            {toolIcons[tool]}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="flex-1 max-w-[130px]">
+                    <a
+                      href={project.viewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1 bg-black text-white text-xs py-1.5 px-4 rounded-full w-full h-9 hover:bg-yellow-400 hover:text-black transition"
+                    >
+                      <FaEye className="text-sm" /> View
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* ---------- end combined panel ---------- */}
+          </div>
+          {/* end media area */}
         </div>
-              {/* Projects Grid */}
-<div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
-  {filteredProjects.map((project, index) => (
-    <div
-      key={index}
-      className="relative bg-white rounded-lg overflow-hidden border shadow-lg group transition-transform duration-300 hover:scale-[1.02]"
-      style={{ height: '100%' }}
-    >
-      {/* Top Section: Media + Title Bar */}
-      <div className="relative z-10 h-[350px] transition-all duration-300 group-hover:-translate-y-24">
-        
-        {project.video ? (
-          <video
-            src={project.video}
-            className="w-full h-full object-cover transition duration-300"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        ) : (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover transition duration-300"
-          />
-        )}
-
-        {/* Dark overlay on hover */}
-        <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-
-        {/* Title */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 text-black px-4 py-3 font-bold text-base z-30">
-          {project.title}
-        </div>
-      </div>
-
-   {/* Hover Reveal Section */}
-<div className="bg-[#1e1e1e] absolute bottom-[-20px] left-0 right-0 z-30 opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 px-4 pb-5">
-  <div className="p-4 flex flex-col items-center">
-    <p className="text-white text-sm mb-4 text-center">{project.description}</p>
-
-<div className="flex gap-3 w-full justify-center mb-2">
-  {/* Tools Button-like Box */}
-  {project.tools && project.tools.length > 0 && (
-    <div className="flex-1 max-w-[130px]">
-      <div className="flex items-center justify-center gap-1 bg-black text-xs py-1.5 px-4 rounded-full w-full h-9 transition group-hover:bg-yellow-400 group-hover:text-black">
-        {project.tools.map((tool, i) => (
-          <span
-            key={i}
-            className="transition-colors text-white group-hover:text-black"
-          >
-            {toolIcons[tool]}
-          </span>
-        ))}
-      </div>
+      ))}
     </div>
-  )}
 
-  {/* View Button */}
-  <div className="flex-1 max-w-[130px]">
-    <a
-      href={project.viewLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center gap-1 bg-black text-white text-xs py-1.5 px-4 rounded-full w-full h-9 hover:bg-yellow-400 hover:text-black transition"
-    >
-      <FaEye className="text-sm" /> View
-    </a>
+    {/* Empty state */}
+    {filteredProjects.length === 0 && (
+      <p className="text-gray-400 mt-6 text-center">No projects found in this category.</p>
+    )}
   </div>
-</div>
+</section>
 
-
-
-
-
-
-
-  </div>
-</div>
-
-    </div>
-  ))}
-</div>
-
-
-
-
-{/* Empty state */}
-{filteredProjects.length === 0 && (
-  <p className="text-gray-400 mt-6 text-center">No projects found in this category.</p>
-)}
-
-      </div>
-    </section>
   );
 };
 
