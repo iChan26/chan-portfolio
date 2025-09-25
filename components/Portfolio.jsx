@@ -52,7 +52,7 @@ const toolIcons = {
 // All project data
 const allProjects = [
    {
-    title: "SALS - Smart Affordable Lifestyle Shopping",
+    title: "SALS - Lifestyle Shopping",
     image: "/img/Web Development/Sals3.webp",
     description: "Medical Equipment Store – Web Development",
     category: "Web Development",
