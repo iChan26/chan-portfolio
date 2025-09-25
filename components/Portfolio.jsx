@@ -51,6 +51,14 @@ const toolIcons = {
 
 // All project data
 const allProjects = [
+   {
+    title: "SALS - Smart Affordable Lifestyle Shopping",
+    image: "/img/Web Development/Sals3.webp",
+    description: "Medical Equipment Store – Web Development",
+    category: "Web Development",
+    viewLink: "https://sals3.com/",
+     tools: ["shopify", "html", "javascript"]
+  }, 
   {
     title: "I&A Jewelry",
     image: "/img/Web Development/ia-international-square.webp",
