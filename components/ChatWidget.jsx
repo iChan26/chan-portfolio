@@ -13,7 +13,7 @@ const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Yo! I’m AiChan, Christian’s robot sidekick. Drop a message here and I’ll bug him until he reads it!",
+      text: "Hello! I’m AiChan, Christian’s assistant bot. Please leave your message here, and I’ll make sure he immediately receives it.",
     },
   ]);
 
@@ -149,7 +149,7 @@ const sendMessage = async () => {
           <img src="/img/chatbot-profile.gif" alt="Bot" className="w-8 h-8 rounded-full" />
           <div>
             <p className="text-sm font-extrabold leading-none">AiChan</p>
-            <p className="text-xs text-black/80">You can send me a message here..</p>
+            <p className="text-xs text-black/80">Wanna reach Christian? Type it in here!</p>
           </div>
         </div>
         <FaChevronDown className="cursor-pointer" onClick={() => setIsOpen(false)} />
@@ -251,7 +251,7 @@ const sendMessage = async () => {
         {!emailSubmitted ? (
           <div className="flex flex-col gap-2">
             <label className="text-xs font-semibold text-gray-600">
-              Please enter your email to continue:
+              Please enter your gmail to continue:
             </label>
             <input
               type="email"
