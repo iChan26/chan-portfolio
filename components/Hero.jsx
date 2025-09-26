@@ -50,14 +50,14 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            And I'm a{" "}
+            And I do
             <span className="text-yellow-400 font-extrabold font-mono neon-text block sm:inline">
               <Typewriter
                 words={[
-                  "Web Developer",
-                  "Graphic Designer",
+                  "Web Development",
+                  "Graphic Design",
                   "Basic SEO",
-                  "Full Stack Developer",
+                  "Full Stack Development",
                 ]}
                 loop
                 cursor
