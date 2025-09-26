@@ -137,7 +137,7 @@ export default function Hero() {
   <motion.div
     animate={{ y: [0, -10, 0] }}
     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-    className="relative w-[70%] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-[3/4]"
+    className="relative w-[70%] max-w-xs sm:max-w-sm mt-[50px] md:max-w-md lg:max-w-lg aspect-[3/4]"
   >
     <img
       src="/img/profile-logo2.webp"
