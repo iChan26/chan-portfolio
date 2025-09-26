@@ -127,25 +127,26 @@ export default function Hero() {
       </motion.a>
     </div>
 
-    {/* Profile Image */}
-    <motion.div
-      className="flex-1 flex justify-center items-center"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5 }}
-    >
-      <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="relative w-40 h-44 sm:w-56 sm:h-60 md:w-72 md:h-80 lg:w-80 lg:h-96"
-      >
-        <img
-          src="/img/profile-logo2.webp"
-          alt="Christian"
-          className="relative z-10 w-full h-full object-cover rounded-md scale-150 pointer-events-none"
-        />
-      </motion.div>
-    </motion.div>
+   {/* Profile Image */}
+<motion.div
+  className="flex-1 flex justify-center items-center"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.5 }}
+>
+  <motion.div
+    animate={{ y: [0, -10, 0] }}
+    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+    className="relative w-[70%] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-[3/4]"
+  >
+    <img
+      src="/img/profile-logo2.webp"
+      alt="Christian"
+      className="relative z-10 w-full h-full object-cover rounded-md pointer-events-none"
+    />
+  </motion.div>
+</motion.div>
+
   </div>
 </section>
 
