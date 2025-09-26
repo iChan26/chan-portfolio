@@ -54,10 +54,11 @@ export default function Hero() {
             <span className="text-yellow-400 font-extrabold font-mono neon-text block sm:inline">
               <Typewriter
                 words={[
-                  "Web Development",
-                  "Graphic Design",
-                  "Basic SEO",
-                  "Full Stack Development",
+                  " Web Development",
+                  " Web Design",
+                  " Graphic Design",
+                  " Basic SEO",
+                  " Full Stack Web Development",
                 ]}
                 loop
                 cursor
