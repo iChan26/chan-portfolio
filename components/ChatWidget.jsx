@@ -13,7 +13,7 @@ const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Hey there! I’m Chan AI, Christian’s bot buddy. Leave him a message here and I’ll make sure he gets it!",
+      text: "Yo! I’m AiChan, Christian’s robot sidekick 🤖. Drop a message here and I’ll bug him until he reads it!",
     },
   ]);
 
