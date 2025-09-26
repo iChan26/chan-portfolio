@@ -9,6 +9,7 @@ import {
   SiPhp,
   SiMysql,
   SiWordpress,
+  SiYoast,
   SiShopify,
   SiSquarespace,
   SiWix,
@@ -123,6 +124,7 @@ const Resume = () => {
   { name: "React", icon: <SiReact className="text-black text-xl" /> },
   { name: "Next.js", icon: <SiNextdotjs className="text-black text-xl" /> },
   { name: "Tailwind", icon: <SiTailwindcss className="text-black text-xl" /> },
+  { name: "Yoast SEO", icon: <SiYoast className="text-black text-xl" /> },
 
   // Backend
   { name: "PHP", icon: <SiPhp className="text-black text-xl" /> },

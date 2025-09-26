@@ -56,7 +56,7 @@ export default function Hero() {
                 words={[
                   "Web Developer",
                   "Graphic Designer",
-                  "SEO Specialist",
+                  "Basic SEO",
                   "Full Stack Developer",
                 ]}
                 loop
