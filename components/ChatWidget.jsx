@@ -13,7 +13,7 @@ const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Yo! I’m AiChan, Christian’s robot sidekick 🤖. Drop a message here and I’ll bug him until he reads it!",
+      text: "Yo! I’m AiChan, Christian’s robot sidekick. Drop a message here and I’ll bug him until he reads it!",
     },
   ]);
 
@@ -148,7 +148,7 @@ const sendMessage = async () => {
         <div className="flex items-center gap-2">
           <img src="/img/chatbot-profile.gif" alt="Bot" className="w-8 h-8 rounded-full" />
           <div>
-            <p className="text-sm font-extrabold leading-none">Chan Ai</p>
+            <p className="text-sm font-extrabold leading-none">AiChan</p>
             <p className="text-xs text-black/80">You can send me a message here..</p>
           </div>
         </div>
@@ -348,7 +348,7 @@ const sendMessage = async () => {
         <span className="flex items-center gap-1">
           Powered by{" "}
           <span className="text-yellow-500 font-extrabold hover:text-yellow-600">
-            Chan Ai.
+            AiChan.
           </span>
         </span>
       </div>
