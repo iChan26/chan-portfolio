@@ -1,25 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-/* styles/globals.css */
+/* Custom Fonts */
 @font-face {
   font-family: 'Termina';
-  src: url('/fonts/Termina-Regular.woff2') format('woff2'); /* Adjust path and formats */
+  src: url('/fonts/Termina-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
-  font-family: 'Termina', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   background-color: #000;
+  color: #fff;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
 /* tailwind text stroke utility */
 .stroke-text {
   -webkit-text-stroke: 0.6px white;

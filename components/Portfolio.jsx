@@ -315,7 +315,7 @@ const PortfolioSection = () => {
       : allProjects.filter((p) => p.category === activeCategory);
 
   return (
-   <section id="portfolio" className="bg-[#0d0c0c] font-mono py-20 px-4 sm:px-6">
+  <section id="portfolio" className="bg-[#0d0c0c] py-20 px-4 sm:px-6">
   <div className="max-w-screen-xl mx-auto text-center">
     {/* Section Heading */}
     <h2 className="text-black text-2xl sm:text-3xl lg:text-6xl font-extrabold mb-10">
@@ -428,6 +428,7 @@ const PortfolioSection = () => {
     )}
   </div>
 </section>
+
 
   );
 };
