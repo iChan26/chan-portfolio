@@ -80,7 +80,7 @@ const allProjects = [
     image: "/img/Web Development/BorderDME.webp",
     description: "Medical equipment Informational Site - Web Development",
     category: "Web Development",
-    viewLink: "https://borderdme.wpcomstaging.com/",
+    viewLink: "https://borderdme.com/",
     tools: ["wordpress", "elementor", "javascript"]
   },
   {
@@ -250,7 +250,7 @@ const allProjects = [
     description: "Point 1 Shop Retail – Web Development/SEO",
     category: "Web Development",
     viewLink: "https://point1.ca/",
-    tools: ["shopify", "html", "yoast"]
+    tools: ["shopify", "html", "javascript"]
   },   
   {
     title: "Dental Billing",
@@ -265,7 +265,7 @@ const allProjects = [
     image: "/img/Web Development/Border Store.webp",
     description: "Medical Equipment Store – Web Development",
     category: "Web Development",
-    viewLink: "https://www.borderdme.com/",
+    viewLink: "https://www.bordersleep.com/",
      tools: ["shopify", "html", "javascript"]
   },  
   {
