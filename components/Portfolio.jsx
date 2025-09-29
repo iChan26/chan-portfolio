@@ -250,7 +250,7 @@ const allProjects = [
     description: "Point 1 Shop Retail – Web Development/SEO",
     category: "Web Development",
     viewLink: "https://point1.ca/",
-    tools: ["wordpress", "yoast"]
+    tools: ["shopify", "html", "yoast"]
   },   
   {
     title: "Dental Billing",
