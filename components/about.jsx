@@ -63,20 +63,21 @@ export default function About() {
   >
     {/* Right Side - Content */}
     <div className="flex-1 space-y-5 text-center md:text-left">
-      {/* ✅ Mobile-Only Image */}
-      <div className="md:hidden flex justify-center">
-        <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-64 h-64 sm:w-72 sm:h-72"
-        >
-          <img
-            src="/img/about-profile.webp"
-            alt="About Profile"
-            className="w-full h-full object-contain pointer-events-none"
-          />
-        </motion.div>
-      </div>
+          {/* ✅ Mobile-Only Image (enlarged) */}
+          <div className="md:hidden flex justify-center">
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-80 h-80 sm:w-96 sm:h-96"
+            >
+              <img
+                src="/img/about-profile.webp"
+                alt="About Profile"
+                className="w-full h-full object-contain pointer-events-none"
+              />
+            </motion.div>
+          </div>
+
 
       <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold mt-2 leading-tight">
         About Me
