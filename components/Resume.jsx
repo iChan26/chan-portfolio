@@ -90,13 +90,13 @@ const Resume = () => {
     {
       image: "/img/Education/MU Logo.webp",
       year: "2023 - 2024",
-      school: "Misamis University (Misamis Occidental, Oroquieta City, Philippines)",
+      school: "Misamis University",
       course: "Bachelor of Science in Information Technology",
     },
     {
       image: "/img/Education/MONHS.webp",
       year: "2019 - 2020",
-      school: "Misamis Occidental National Highschool (Misamis Occidental, Oroquieta City, Philippines)",
+      school: "Misamis Occidental National Highschool",
       course: "Information and Communication Technology",
     },
   ];
