@@ -31,66 +31,72 @@ const Resume = () => {
 
   const experiences = [
     {
-      image: "/img/dure&dunelogo.webp",
+      image: "/img/Experience/dure&dunelogo.webp",
       role: "Computer System Servicing",
-      company: "Deor & Dune Academe School of Technology Inc.",
+      company: "Deor & Dune Academe School of Technology Inc. (Local From Philippines)",
       year: "September 2019 - Feb 2020",
     },
     {
-      image: "/img/phrmdologo.webp",
+      image: "/img/Experience/phrmdologo.webp",
       role: "Database Management",
-      company: "PHRMDO, Misamis Occidental",
+      company: "PHRMDO, Misamis Occidental (Local From Philippines)",
       year: "Feb - June 2024",
     },
     {
-      image: "/img/AgriMart.webp",
+      image: "/img/Experience/AgriMart.webp",
       role: "Web Developer",
-      company: "AgriMart - USTP - Mobod, Oroquieta City",
+      company: "AgriMart - USTP (Local From Philippines)",
       year: "October 2021 - November 2024",
     },
     {
-      image: "/img/gcmlogo.webp",
+      image: "/img/Experience/gcmlogo.webp",
       role: "Graphic Designer",
-      company: "GCM Oroquieta",
+      company: "GCM Oroquieta (Local From Philippines)",
       year: "March 2022 - January 2025",
     },
     {
-      image: "/img/penguinpr.webp",
-      role: "Web Designer and Graphics",
-      company: "Penguin PR - Marketing Agency",
+      image: "/img/Experience/penguinpr.webp",
+      role: "Web and Graphics Designer",
+      company: "Penguin PR - Marketing Agency (Remote from U.S)",
       year: "2025",
     },
     {
-      image: "/img/I&A.webp",
+      image: "/img/Experience/I&A.webp",
       role: "Full Stack Web Developer",
       company: "Glimbyte - I&A International (Remote from Albania, Ireland)",
       year: "2025",
     },
     {
-      image: "/img/Brad.webp",
+      image: "/img/Experience/Brad.webp",
       role: "Graphics and Web Designer",
       company: "Brad Chapman Vocal Coach (Remote from Las Vegas, Nevada)",
       year: "2025",
     },
     {
-      image: "/img/point1.svg",
+      image: "/img/Experience/point1.webp",
       role: "Web Developer and SEO Optimization",
       company: "Dad's Wallet (Remote from Australia)",
+      year: "2025",
+    },
+     {
+      image: "/img/Experience/borderdme.webp",
+      role: "Wordpress & Shopify Web Developer",
+      company: "Border Medical Supplies & Equipment (Remote from Mexico border)",
       year: "2025",
     },
   ];
 
   const education = [
     {
-      image: "/img/MU Logo.webp",
+      image: "/img/Education/MU Logo.webp",
       year: "2023 - 2024",
-      school: "Misamis University",
+      school: "Misamis University (Misamis Occidental, Oroquieta City, Philippines)",
       course: "Bachelor of Science in Information Technology",
     },
     {
-      image: "/img/MONHS.webp",
+      image: "/img/Education/MONHS.webp",
       year: "2019 - 2020",
-      school: "Misamis Occidental National Highschool",
+      school: "Misamis Occidental National Highschool (Misamis Occidental, Oroquieta City, Philippines)",
       course: "Information and Communication Technology",
     },
   ];
