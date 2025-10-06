@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaEye, FaCode } from "react-icons/fa";
-import { FaFigma, FaReact } from "react-icons/fa";
+import { FaEye, FaCode, FaFigma, FaReact} from "react-icons/fa";
+import { motion } from "framer-motion";
 import {
   SiNextdotjs,
   SiReact,
@@ -315,13 +315,19 @@ const PortfolioSection = () => {
       : allProjects.filter((p) => p.category === activeCategory);
 
   return (
-  <section id="portfolio" className="bg-[#0d0c0c] py-20 px-4 sm:px-6">
+
+<section id="portfolio" className="bg-[#0d0c0c] py-20 px-4 sm:px-6">
   <div className="max-w-screen-xl mx-auto text-center">
     {/* Section Heading */}
-    <h2 className="text-black text-2xl sm:text-3xl lg:text-6xl font-extrabold mb-10">
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="text-black text-2xl sm:text-3xl lg:text-6xl font-extrabold mb-10"
+    >
       <span className="text-white font-extrabold">My</span>{" "}
       <span className="text-yellow-500 font-extrabold">Portfolio</span>
-    </h2>
+    </motion.h2>
 
     {/* Category Tabs */}
     <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 text-xs sm:text-base font-semibold">
@@ -340,11 +346,33 @@ const PortfolioSection = () => {
       ))}
     </div>
 
-    {/* Projects Grid */}
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 sm:gap-8">
+    {/* Projects Grid with Smooth Zoom + Fade Animation */}
+    <motion.div
+      key={activeCategory} // 👈 re-triggers animation when category changes
+      initial="hidden"
+      animate="show"
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.12,
+          },
+        },
+      }}
+      className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 sm:gap-8"
+    >
       {filteredProjects.map((project, index) => (
-        <div
+        <motion.div
           key={index}
+          variants={{
+            hidden: { opacity: 0, scale: 0.9, y: 25 },
+            show: {
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              transition: { duration: 0.5, ease: "easeOut" },
+            },
+          }}
           className="relative bg-white rounded-lg overflow-hidden border shadow-lg group transition-transform duration-300 hover:scale-[1.02]"
         >
           {/* Media area */}
@@ -414,17 +442,21 @@ const PortfolioSection = () => {
                 </div>
               </div>
             </div>
-            {/* End panel */}
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
 
     {/* Empty State */}
     {filteredProjects.length === 0 && (
-      <p className="text-gray-400 mt-6 text-center">
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className="text-gray-400 mt-6 text-center"
+      >
         No projects found in this category.
-      </p>
+      </motion.p>
     )}
   </div>
 </section>

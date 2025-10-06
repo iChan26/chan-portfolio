@@ -58,17 +58,23 @@ export default function Header() {
         <a href="#contact" className="hover:text-yellow-400 transition">Contact Me</a>
       </nav>
 
-      <button
-        onClick={() =>
-          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-        }
-        className="shine-button ml-4 bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 
-                   text-[#211c1c] px-5 py-2 rounded-full text-sm shadow-md
-                   transition-transform duration-200 ease-in-out flex items-center gap-2 font-semibold"
-      >
-        Hire Me
-        <FaArrowRight className="text-xs transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
-      </button>
+ <button
+  onClick={() =>
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+  }
+  className="relative overflow-hidden ml-4 bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 
+             text-[#211c1c] px-5 py-2 rounded-full text-sm shadow-md
+             transition-transform duration-200 ease-in-out flex items-center gap-2 font-semibold"
+>
+  Hire Me
+  <FaArrowRight className="text-xs transition-transform duration-300" />
+
+  {/* Smooth animated shine overlay */}
+  <span className="absolute inset-0 w-full h-full overflow-hidden">
+    <span className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-80 animate-shine" />
+  </span>
+</button>
+
     </div>
   </div>
 </header>

@@ -107,24 +107,27 @@ export default function Hero() {
         ))}
       </motion.div>
 
-      {/* CV Button */}
-      <motion.a
-        href="https://drive.google.com/file/d/1P1FQxc6K4aKYaEzuA569QqEX6yT--yH1/view?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="shine-button relative group mt-8 w-[160px] h-[48px] inline-block rounded-full overflow-hidden bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 shadow-lg text-[#211c1c] font-semibold transition-shadow duration-300"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-      >
-        {/* Shine layer handled by CSS */}
-        <div className="absolute inset-0 flex items-center justify-center text-base transition-transform duration-500 group-hover:-translate-y-full z-10">
-          View CV
-        </div>
-        <div className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-10">
-          <img src="/svg/resume.svg" alt="View" className="w-13 h-9" />
-        </div>
-      </motion.a>
+    {/* CV Button */}
+<motion.a
+  href="https://drive.google.com/file/d/1P1FQxc6K4aKYaEzuA569QqEX6yT--yH1/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="shine-hover relative group mt-8 w-[160px] h-[48px] inline-block rounded-full overflow-hidden bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 shadow-lg text-[#211c1c] font-semibold transition-shadow duration-300"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1 }}
+>
+  {/* Front layer text */}
+  <div className="absolute inset-0 flex items-center justify-center text-base transition-transform duration-500 group-hover:-translate-y-full z-10">
+    View CV
+  </div>
+
+  {/* Icon layer on hover */}
+  <div className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-10">
+    <img src="/svg/resume.svg" alt="View" className="w-13 h-9" />
+  </div>
+</motion.a>
+
     </div>
 
    {/* Profile Image */}

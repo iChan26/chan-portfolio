@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -16,10 +17,10 @@ module.exports = {
           'Georgia',
           'serif',
         ],
-        techno: ['"Orbitron"', 'sans-serif'], 
-        mono: ['"Share Tech Mono"', 'monospace'], 
-         sans: ['Poppins', 'sans-serif'], 
-          modern: ['Poppins', 'sans-serif'],
+        techno: ['"Orbitron"', 'sans-serif'],
+        mono: ['"Share Tech Mono"', 'monospace'],
+        sans: ['Poppins', 'sans-serif'],
+        modern: ['Poppins', 'sans-serif'],
       },
 
       maxWidth: {
@@ -74,20 +75,21 @@ module.exports = {
           '100%': { width: '100%' },
         },
         shine: {
-          '0%': { opacity: 0.6, filter: 'brightness(1.2)' },
-          '50%': { opacity: 1, filter: 'brightness(1.6)' },
-          '100%': { opacity: 1, filter: 'brightness(1)' },
+          '0%': { transform: 'translateX(-150%) skewX(-20deg)', opacity: '0.4' },
+          '50%': { opacity: '0.8' },
+          '100%': { transform: 'translateX(150%) skewX(-20deg)', opacity: '0.4' },
         },
       },
-
       animation: {
         slideDown: 'slideDown 0.5s ease-out forwards',
         underlineIn: 'underlineIn 0.3s ease-in-out forwards',
-        shine: 'shine 1s ease-in-out',
-         shine: 'shine 2.5s linear infinite',
+        shine: 'shine 1.8s ease-in-out infinite',
       },
-      
-      
+      animation: {
+        slideDown: 'slideDown 0.5s ease-out forwards',
+        underlineIn: 'underlineIn 0.3s ease-in-out forwards',
+        shine: 'shine 1.5s linear infinite',
+      },
     },
   },
   plugins: [],
