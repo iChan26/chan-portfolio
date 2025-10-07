@@ -152,7 +152,7 @@ const Resume = () => {
   cms: [
     { name: "WordPress", icon: <SiWordpress className="text-black text-xl" /> },
     { name: "Shopify", icon: <SiShopify className="text-black text-xl" /> },
-    { name: "Wix",icon: (<img src="/svg/Wix.svg" alt="Wix" className="w-6 h-6 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
+    { name: "Wix",icon: (<img src="/svg/Wix.svg" alt="Wix" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "Squarespace", icon: <SiSquarespace className="text-black text-xl" /> },
     { name: "Webflow", icon: <SiWebflow className="text-black text-xl" /> },
     { name: "GoHighLevel",icon: (<img src="/svg/gohighlevel.svg" alt="GoHighLevel" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
