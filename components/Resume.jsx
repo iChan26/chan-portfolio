@@ -46,10 +46,16 @@ const Resume = () => {
     year: "2025",
   },
   {
+    image: "/img/Experience/SALS3.webp",
+    role: "Shopify Web Developer",
+    company: "SALS3 - Online Lifestyle Shopping platform (Remote from Australia)",
+    year: "2025",
+  },
+  {
     image: "/img/Experience/CityHill.webp",
     role: "WordPress Developer",
     company: "CityHill Church (Remote from South Africa)",
-    year: "2025",
+    year: "2024",
   },
   {
     image: "/img/Experience/I&A.webp",

@@ -104,3 +104,9 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: inherit;
   background-color: #1e1e1e;
 }
+.swiper-pagination-progressbar {
+  background: rgba(255, 255, 255, 0.2);
+}
+.swiper-pagination-progressbar-fill {
+  background: #facc15; /* Tailwind yellow-400 */
+}

@@ -131,9 +131,9 @@ Liquid: (
 // All project data
 const allProjects = [
    {
-    title: "SALS - Lifestyle Shopping",
+    title: "SALS3 - Lifestyle Shopping",
     image: "/img/Web Development/Sals3.webp",
-    description: "Medical Equipment Store – Web Development",
+    description: "Lifestyle Store – Web Development",
     category: "Web Development",
     viewLink: "https://sals3.com/",
      tools: ["shopify", "Foxify", "Liquid"]
@@ -435,7 +435,7 @@ const PortfolioSection = () => {
 
     {/* Projects Grid with Smooth Zoom + Fade Animation */}
     <motion.div
-      key={activeCategory} // 👈 re-triggers animation when category changes
+      key={activeCategory} // re-triggers animation when category changes
       initial="hidden"
       animate="show"
       variants={{
