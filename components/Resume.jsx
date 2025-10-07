@@ -262,7 +262,7 @@ const Resume = () => {
                         icon: <MdOutlineStorage className="text-yellow-400 text-lg mr-2" />,
                       },
                       cms: {
-                        label: "CMS & Page Builders",
+                        label: "CMS Builders",
                         icon: <FiLayers className="text-yellow-400 text-lg mr-2" />,
                       },
                       deploy: {
