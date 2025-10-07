@@ -12,7 +12,6 @@ import {
   SiYoast,
   SiShopify,
   SiSquarespace,
-  SiWix,
   SiWebflow,
   SiFigma,
   SiCanva,
