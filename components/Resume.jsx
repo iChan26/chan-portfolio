@@ -70,6 +70,12 @@ const Resume = () => {
     year: "2024",
   },
   {
+    image: "/img/Experience/DentalBilling.webp",
+    role: "Web Developer and Graphics Designer",
+    company: "Dental Billing Innovative (Remote from U.S)",
+    year: "2023",
+  },
+  {
     image: "/img/Experience/Brad.webp",
     role: "Graphics and Web Designer",
     company: "Brad Chapman Vocal Coach (Remote from Las Vegas, Nevada)",

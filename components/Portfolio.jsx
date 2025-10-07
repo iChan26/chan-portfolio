@@ -317,6 +317,14 @@ const allProjects = [
     tools: ["canva"]
   },
   {
+    title: "Dental Billing Innovative – Outsourcing",
+    image: "/img/Web Development/DentalBilling.webp",
+    description: "Dental Billing – Web Development",
+    category: "Web Development",
+    viewLink: "https://dentalbillingin.com/",
+    tools: ["wordpress", "elementor", "php"]
+  },
+  {
     title: "UDS Logo",
     image: "/img/Graphic Designs/UDS3.webp",
     description: "Brand identity for Unique Digital Solution",
