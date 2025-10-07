@@ -142,6 +142,8 @@ const Resume = () => {
     { name: "Tailwind", icon: <SiTailwindcss className="text-black text-xl" /> },
     { name: "Liquid", icon: <SiShopify className="text-black text-xl" /> },
     { name: "Elementor", icon: <SiElementor className="text-black text-xl" /> },
+    { name: "Divi",icon: (<img src="/svg/Divi.svg" alt="Divi" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
+
   ],
   backend: [
     { name: "PHP", icon: <SiPhp className="text-black text-xl" /> },
