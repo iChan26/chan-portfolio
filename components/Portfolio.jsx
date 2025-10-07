@@ -45,6 +45,24 @@ const toolIcons = {
     wordpress: <SiWordpress className="text-lg" title="WordPress" />,
     highlevel: <FiLayers className="text-lg" title="HighLevel" />,
     shopify: <SiShopify className="text-lg" title="Shopify" />,
+
+  divi: (
+  <span title="Divi">
+    <img
+      src="/svg/Divi.svg"
+      alt="Divi"
+      className="w-6 h-6 pointer-events-none select-none"
+      draggable="false"
+      onContextMenu={(e) => e.preventDefault()}
+      style={{
+        filter:
+          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
+      }}
+    />
+  </span>
+),
+
+
 };
 
 
@@ -245,12 +263,12 @@ const allProjects = [
     tools: ["canva"]
   },
   {
-    title: "Point 1 Shop Retail",
-    image: "/img/Web Development/point1ca.webp",
-    description: "Point 1 Shop Retail – Web Development/SEO",
+    title: "CityHill Church - Official Site",
+    image: "/img/Web Development/CityHill Church.webp",
+    description: "CityHill Church – Web Development",
     category: "Web Development",
-    viewLink: "https://point1.ca/",
-    tools: ["shopify", "html", "javascript"]
+    viewLink: "https://cityhillchurch.co.za/",
+    tools: ["divi", "html", "javascript"]
   },   
   {
     title: "Dental Billing",
