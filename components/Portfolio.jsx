@@ -43,7 +43,6 @@ const toolIcons = {
     squarespace: <SiSquarespace className="text-lg" title="Squarespace" />,
     elementor: <SiElementor className="text-lg" title="Elementor" />,
     wordpress: <SiWordpress className="text-lg" title="WordPress" />,
-    highlevel: <FiLayers className="text-lg" title="HighLevel" />,
     shopify: <SiShopify className="text-lg" title="Shopify" />,
 
   divi: (
@@ -62,6 +61,21 @@ const toolIcons = {
   </span>
 ),
 
+ GoHighLevel: (
+  <span title="GoHighLevel">
+    <img
+      src="/svg/gohighlevel.svg"
+      alt="GoHighLevel"
+      className="w-6 h-6 pointer-events-none select-none"
+      draggable="false"
+      onContextMenu={(e) => e.preventDefault()}
+      style={{
+        filter:
+          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
+      }}
+    />
+  </span>
+),
 
 };
 
@@ -292,7 +306,7 @@ const allProjects = [
     description: "Small Business – Web Development",
     category: "Web Development",
     viewLink: "https://app.gohighlevel.com/v2/preview/Il9wA6FxqN6HxzSGT9bk",
-    tools: ["highlevel", "html", "javascript"]
+    tools: ["GoHighLevel", "html", "javascript"]
   },   
   {
     title: "Elite Drip",
