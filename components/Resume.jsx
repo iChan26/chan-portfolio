@@ -39,62 +39,68 @@ const Resume = () => {
   const tabs = ["Skills", "Experience", "Education", "Achievements"];
 
   const experiences = [
-    {
-      image: "/img/Experience/dure&dunelogo.webp",
-      role: "Computer System Servicing",
-      company:
-        "Deor & Dune Academe School of Technology Inc. (Local From Philippines)",
-      year: "September 2019 - Feb 2020",
-    },
-    {
-      image: "/img/Experience/phrmdologo.webp",
-      role: "Database Management",
-      company: "PHRMDO, Misamis Occidental (Local From Philippines)",
-      year: "Feb - June 2024",
-    },
-    {
-      image: "/img/Experience/AgriMart.webp",
-      role: "Web Developer",
-      company: "AgriMart - USTP (Local From Philippines)",
-      year: "October 2021 - November 2024",
-    },
-    {
-      image: "/img/Experience/gcmlogo.webp",
-      role: "Graphic Designer",
-      company: "GCM Oroquieta (Local From Philippines)",
-      year: "March 2022 - January 2025",
-    },
-    {
-      image: "/img/Experience/penguinpr.webp",
-      role: "Web and Graphics Designer",
-      company: "Penguin PR - Marketing Agency (Remote from U.S)",
-      year: "2025",
-    },
-    {
-      image: "/img/Experience/I&A.webp",
-      role: "Full Stack Web Developer",
-      company: "Glimbyte - I&A International (Remote from Albania, Ireland)",
-      year: "2025",
-    },
-    {
-      image: "/img/Experience/Brad.webp",
-      role: "Graphics and Web Designer",
-      company: "Brad Chapman Vocal Coach (Remote from Las Vegas, Nevada)",
-      year: "2025",
-    },
-    {
-      image: "/img/Experience/point1.webp",
-      role: "Web Developer and SEO Optimization",
-      company: "Dad's Wallet (Remote from Australia)",
-      year: "2025",
-    },
-    {
-      image: "/img/Experience/borderdme.webp",
-      role: "WordPress & Shopify Web Developer",
-      company: "Border Medical Supplies & Equipment (Remote from Mexico border)",
-      year: "2025",
-    },
-  ];
+  {
+    image: "/img/Experience/borderdme.webp",
+    role: "WordPress & Shopify Web Developer",
+    company: "Border Medical Supplies & Equipment (Remote from Mexico border)",
+    year: "2025",
+  },
+  {
+    image: "/img/Experience/CityHill.webp",
+    role: "WordPress Developer",
+    company: "CityHill Church (Remote from South Africa)",
+    year: "2025",
+  },
+  {
+    image: "/img/Experience/I&A.webp",
+    role: "Full Stack Web Developer",
+    company: "Glimbyte - I&A International (Remote from Albania, Ireland)",
+    year: "2024",
+  },
+  {
+    image: "/img/Experience/phrmdologo.webp",
+    role: "Database Management",
+    company: "PHRMDO, Misamis Occidental (Local From Philippines)",
+    year: "2024",
+  },
+  {
+    image: "/img/Experience/AgriMart.webp",
+    role: "Web Developer",
+    company: "AgriMart - USTP (Local From Philippines)",
+    year: "2024",
+  },
+  {
+    image: "/img/Experience/Brad.webp",
+    role: "Graphics and Web Designer",
+    company: "Brad Chapman Vocal Coach (Remote from Las Vegas, Nevada)",
+    year: "2023",
+  },
+  {
+    image: "/img/Experience/Dad'sWallet.webp",
+    role: "Web Developer and SEO Optimization",
+    company: "Dad's Wallet (Remote from Australia)",
+    year: "2022",
+  },
+  {
+    image: "/img/Experience/gcmlogo.webp",
+    role: "Graphic Designer",
+    company: "GCM Church Oroquieta (Local From Philippines)",
+    year: "2022",
+  },
+  {
+    image: "/img/Experience/penguinpr.webp",
+    role: "Web and Graphics Designer",
+    company: "Penguin PR - Marketing Agency (Remote from U.S)",
+    year: "2021",
+  },
+  {
+    image: "/img/Experience/dure&dunelogo.webp",
+    role: "Computer System Servicing",
+    company: "Deor & Dune Academe School of Technology Inc. (Local From Philippines)",
+    year: "2020",
+  },
+];
+
 
   const education = [
     {
