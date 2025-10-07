@@ -282,7 +282,7 @@ const allProjects = [
     description: "CityHill Church – Web Development",
     category: "Web Development",
     viewLink: "https://cityhillchurch.co.za/",
-    tools: ["divi", "html", "javascript"]
+    tools: ["wordpress", "divi", "javascript"]
   },   
   {
     title: "Dental Billing",
