@@ -95,7 +95,7 @@ const Resume = () => {
   },
   {
     image: "/img/Experience/penguinpr.webp",
-    role: "Web and Graphics Designer",
+    role: "Web Developer and Graphics Designer",
     company: "Penguin PR - Marketing Agency (Remote from U.S)",
     year: "2021",
   },
