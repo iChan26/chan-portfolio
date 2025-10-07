@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Chan. Portfolio</title>
+        <title>Chan-Portfolio</title>
         <link rel="icon" href="/img/chan-logo.webp" type="image/webp" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
