@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <Head>
         <title>Chan. Portfolio</title>
-        <link rel="icon" href="/img/profile-logo2.webp" type="image/webp" />
+        <link rel="icon" href="/img/chan-logo.webp" type="image/webp" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
