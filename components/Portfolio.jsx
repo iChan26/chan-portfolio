@@ -77,6 +77,53 @@ const toolIcons = {
   </span>
 ),
 
+Shogun: (
+  <span title="Shogun">
+    <img
+      src="/svg/shogun.svg"
+      alt="Shogun"
+      className="w-6 h-6 pointer-events-none select-none"
+      draggable="false"
+      onContextMenu={(e) => e.preventDefault()}
+      style={{
+        filter:
+          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
+      }}
+    />
+  </span>
+),
+
+Foxify: (
+  <span title="Foxify">
+    <img
+      src="/svg/foxify.svg"
+      alt="Foxify"
+      className="w-6 h-6 pointer-events-none select-none"
+      draggable="false"
+      onContextMenu={(e) => e.preventDefault()}
+      style={{
+        filter:
+          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
+      }}
+    />
+  </span>
+),
+
+Liquid: (
+  <span title="Liquid">
+    <img
+      src="/svg/liquid.svg"
+      alt="Liquid"
+      className="w-6 h-6 pointer-events-none select-none"
+      draggable="false"
+      onContextMenu={(e) => e.preventDefault()}
+      style={{
+        filter:
+          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
+      }}
+    />
+  </span>
+),
 };
 
 
@@ -89,7 +136,7 @@ const allProjects = [
     description: "Medical Equipment Store – Web Development",
     category: "Web Development",
     viewLink: "https://sals3.com/",
-     tools: ["shopify", "html", "javascript"]
+     tools: ["shopify", "Foxify", "Liquid"]
   }, 
   {
     title: "I&A Jewelry",
@@ -298,7 +345,7 @@ const allProjects = [
     description: "Medical Equipment Store – Web Development",
     category: "Web Development",
     viewLink: "https://www.bordersleep.com/",
-     tools: ["shopify", "html", "javascript"]
+     tools: ["shopify", "Shogun", "Liquid"]
   },  
   {
     title: "Small Business Enterprise Center",

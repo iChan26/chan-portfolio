@@ -152,10 +152,12 @@ const Resume = () => {
     { name: "React", icon: <SiReact className="text-black text-xl" /> },
     { name: "Next.js", icon: <SiNextdotjs className="text-black text-xl" /> },
     { name: "Tailwind", icon: <SiTailwindcss className="text-black text-xl" /> },
-    { name: "Liquid", icon: <SiShopify className="text-black text-xl" /> },
+    { name: "Liquid",icon: (<img src="/svg/liquid.svg" alt="Liquid" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "Elementor", icon: <SiElementor className="text-black text-xl" /> },
     { name: "Divi",icon: (<img src="/svg/Divi.svg" alt="Divi" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "Gutenberg",icon: (<img src="/svg/Gutenberg.svg" alt="Gutenberg" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
+    { name: "Shogun",icon: (<img src="/svg/shogun.svg" alt="Shogun" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
+    { name: "Foxify",icon: (<img src="/svg/foxify.svg" alt="Foxify" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
 
   ],
   backend: [
