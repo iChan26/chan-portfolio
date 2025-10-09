@@ -60,6 +60,21 @@ const toolIcons = {
     />
   </span>
 ),
+wpbakery: (
+  <span title="WPBakery">
+    <img
+      src="/svg/wpbakery.svg"
+      alt="WPBakery"
+      className="w-6 h-6 pointer-events-none select-none"
+      draggable="false"
+      onContextMenu={(e) => e.preventDefault()}
+      style={{
+        filter:
+          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
+      }}
+    />
+  </span>
+),
 
  GoHighLevel: (
   <span title="GoHighLevel">
@@ -296,7 +311,7 @@ const allProjects = [
     description: "Dad's Wallet – Web Development/SEO",
     category: "Web Development",
     viewLink: "https://dadswallet.com.au/",
-    tools: ["wordpress", "yoast", "elementor"]
+    tools: ["wordpress", "wpbakery", "yoast"]
   },    
   {
     title: "Brad's Services",

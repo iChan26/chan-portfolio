@@ -162,9 +162,10 @@ const Resume = () => {
     { name: "Elementor", icon: <SiElementor className="text-black text-xl" /> },
     { name: "Divi",icon: (<img src="/svg/Divi.svg" alt="Divi" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "Gutenberg",icon: (<img src="/svg/Gutenberg.svg" alt="Gutenberg" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
+    { name: "WPBakery",icon: (<img src="/svg/wpbakery.svg" alt="WPBakery" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "Shogun",icon: (<img src="/svg/shogun.svg" alt="Shogun" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "Foxify",icon: (<img src="/svg/foxify.svg" alt="Foxify" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
-
+   
   ],
   backend: [
     { name: "PHP", icon: <SiPhp className="text-black text-xl" /> },
