@@ -7,8 +7,8 @@ export default function About() {
 
   const stats = [
     { value: 5, label: "Years\nexperience" },
-    { value: 7, label: "Completed\nproject" },
-    { value: 5, label: "Companies\nworked" },
+    { value: 12, label: "Completed\nproject" },
+    { value: 12, label: "Companies\nworked" },
   ];
 
   return (
