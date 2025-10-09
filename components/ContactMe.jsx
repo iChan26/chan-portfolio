@@ -51,14 +51,14 @@ const ContactMe = () => {
         <div className="flex items-center justify-between mb-3">
           <FaEnvelope className="text-red-400 text-2xl" />
           <button
-            onClick={() => handleCopy('penaleschristian45@email.com', 'email')}
+            onClick={() => handleCopy('penaleschristian45@gmail.com', 'gmail')}
             className="text-xs text-gray-400 hover:text-red-400 transition"
           >
-            {copiedField === 'email' ? <FaCheck /> : <FaCopy />}
+            {copiedField === 'gmail' ? <FaCheck /> : <FaCopy />}
           </button>
         </div>
         <p className="text-sm sm:text-base break-words">
-          penaleschristian45@email.com
+          penaleschristian45@gmail.com
         </p>
       </div>
 
