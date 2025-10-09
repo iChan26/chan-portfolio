@@ -286,7 +286,7 @@ const allProjects = [
     image: "/img/Web Development/zen-diamond.webp",
     description: "Zen Diamond – Web Development",
     category: "Web Development",
-    viewLink: "https://ia-international.com/zenuk/",
+    viewLink: "https://zen-diamond.co.uk/",
     tools: ["wordpress", "elementor", "javascript"]
   },
   {
