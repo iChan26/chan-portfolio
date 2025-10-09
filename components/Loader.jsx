@@ -62,7 +62,7 @@ export default function Loader({ onFinish }) {
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4">
         {/* Logo */}
         <motion.img
-          src="/img/chan-logo.webp"
+          src="/img/chan-logo.gif"
           alt="CHAN Logo"
           className="h-16 sm:h-24 object-contain"
           initial={{ opacity: 0, y: 20 }}
