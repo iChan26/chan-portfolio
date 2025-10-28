@@ -146,12 +146,12 @@ Liquid: (
 // All project data
 const allProjects = [
    {
-    title: "SALS3 - Lifestyle Shopping",
-    image: "/img/Web Development/Sals3.webp",
-    description: "Lifestyle Store – Web Development",
+    title: "The Shift Method™ - A Neuroscience-Based Toolkit",
+    image: "/img/Web Development/The Shift Method™.webp",
+    description: "Shift Toolkit – Rewire Your Nervous System and Regain Calm",
     category: "Web Development",
-    viewLink: "https://sals3.com/",
-     tools: ["shopify", "Foxify", "Liquid"]
+    viewLink: "https://theshiftteam.com/",
+     tools: ["shopify", "Liquid", "html", "javascript"]
   }, 
   {
     title: "I&A Jewelry",
@@ -175,7 +175,7 @@ const allProjects = [
     description: "Medical equipment Informational Site - Web Development",
     category: "Web Development",
     viewLink: "https://borderdme.com/",
-    tools: ["wordpress", "elementor", "javascript"]
+    tools: ["wordpress", "elementor","html", "javascript"]
   },
   {
     title: "Blue Sky Company SEO Performance",
@@ -231,7 +231,7 @@ const allProjects = [
     description: "Blogsite for Stephanie Blum",
     category: "Web Development",
     viewLink: "https://www.stephanieblumphoto.com/",
-    tools: ["squarespace", "javascript", "css"]
+    tools: ["squarespace", "javascript", "html",]
   },
   {
     title: "Blue Sky Heating and Air",
@@ -287,7 +287,7 @@ const allProjects = [
     description: "Zen Diamond – Web Development",
     category: "Web Development",
     viewLink: "https://zen-diamond.co.uk/",
-    tools: ["wordpress", "elementor", "javascript"]
+    tools: ["wordpress", "elementor","html","javascript"]
   },
   {
     title: "GCM Youth Fellowship",
@@ -344,7 +344,7 @@ const allProjects = [
     description: "CityHill Church – Web Development",
     category: "Web Development",
     viewLink: "https://cityhillchurch.co.za/",
-    tools: ["wordpress", "divi", "javascript"]
+    tools: ["wordpress", "divi","html", "javascript"]
   },   
   {
     title: "Dental Billing",
@@ -360,7 +360,7 @@ const allProjects = [
     description: "Medical Equipment Store – Web Development",
     category: "Web Development",
     viewLink: "https://www.bordersleep.com/",
-     tools: ["shopify", "Shogun", "Liquid"]
+     tools: ["shopify", "Shogun","html", "Liquid"]
   },  
   {
     title: "Small Business Enterprise Center",
@@ -384,7 +384,7 @@ const allProjects = [
     description: "Dental Billing – Web Development",
     category: "Web Development",
     viewLink: "https://dentalbillingin.com/",
-    tools: ["wordpress", "elementor", "php"]
+    tools: ["wordpress", "elementor","html", "php"]
   },
   {
     title: "UDS Logo",
@@ -404,6 +404,14 @@ const allProjects = [
     tools: ["photoshop"]
     
   },
+  {
+    title: "SALS3 - Lifestyle Shopping",
+    image: "/img/Web Development/Sals3.webp",
+    description: "Lifestyle Store – Web Development",
+    category: "Web Development",
+    viewLink: "https://sals3.com/",
+     tools: ["shopify", "Foxify", "Liquid"]
+  }
 ];
 
 const categories = ["All", "Graphic Designs", "Web Development", "SEO Works", "Digital Marketing"];
