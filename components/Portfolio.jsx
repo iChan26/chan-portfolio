@@ -145,10 +145,18 @@ Liquid: (
 
 // All project data
 const allProjects = [
+  {
+    title: "Reedemer Hospice",
+    image: "/img/Web Development/Redeemer Hospice.webp",
+    description: "Reedemer Hospice – Web Development",
+    category: "Web Development",
+    viewLink: "https://redeemerhospice.com/",
+     tools: ["wordpress", "elementor", "html", "javascript"]
+  }, 
    {
     title: "The Shift Method™ - A Neuroscience-Based Toolkit",
     image: "/img/Web Development/The Shift Method™.webp",
-    description: "Shift Toolkit – Rewire Your Nervous System and Regain Calm",
+    description: "Shift Toolkit – Web Development",
     category: "Web Development",
     viewLink: "https://theshiftteam.com/",
      tools: ["shopify", "Liquid", "html", "javascript"]
@@ -156,7 +164,7 @@ const allProjects = [
   {
     title: "I&A Jewelry",
     image: "/img/Web Development/ia-international-square.webp",
-    description: "Luxury Redefined – Web Design",
+    description: "Luxury Redefined – Next.Js/Web Design",
     category: "Web Development",
     viewLink: "https://ia-international.vercel.app/",
     tools: ["nextjs", "tailwind", "vercel"]
