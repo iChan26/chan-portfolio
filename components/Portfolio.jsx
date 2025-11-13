@@ -153,8 +153,16 @@ const allProjects = [
     viewLink: "https://redeemerhospice.com/",
      tools: ["wordpress", "elementor", "html", "javascript"]
   }, 
+  {
+    title: "WeBuilt AI Agents",
+    image: "/img/Web Development/WeBuilt.webp",
+    description: "Deploy AI Agents – Frontend/Web Design",
+    category: "Web Development",
+    viewLink: "https://app.gohighlevel.com/v2/preview/dFp5wWMfb2kkwa1xxKO4#col-6u7nxbS48p",
+     tools: ["GoHighLevel", "html", "css", "javascript"]
+  }, 
    {
-    title: "The Shift Method™ - A Neuroscience-Based Toolkit",
+    title: "The Shift Method™",
     image: "/img/Web Development/The Shift Method™.webp",
     description: "Shift Toolkit – Web Development",
     category: "Web Development",
