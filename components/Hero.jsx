@@ -112,7 +112,7 @@ export default function Hero() {
   href="https://drive.google.com/file/d/15WhkuHUnDB-qs1pqEgs2nX42tCe1DVDm/view?usp=sharing"
   target="_blank"
   rel="noopener noreferrer"
-  className="shine-hover relative group mt-8 w-[160px] h-[48px] inline-block rounded-full overflow-hidden bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 shadow-lg text-[#211c1c] font-semibold transition-shadow duration-300"
+  className="cursor-hover shine-hover relative group mt-8 w-[160px] h-[48px] inline-block rounded-full overflow-hidden bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 shadow-lg text-[#211c1c] font-semibold transition-shadow duration-300"
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ delay: 1 }}

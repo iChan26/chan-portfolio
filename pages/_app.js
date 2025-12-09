@@ -2,13 +2,13 @@
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import "@fortawesome/fontawesome-svg-core/styles.css";
-
 import '../styles/globals.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import Header from "../components/Header";
 import ChatWidget from "../components/ChatWidget";
+import Cursor from "../components/Cursor";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }) {
       <Header />
       <Component {...pageProps} />
       <ChatWidget />
+      <Cursor />
     </>
   );
 }
