@@ -426,7 +426,7 @@ const allProjects = [
     description: "Lifestyle Store – Web Development",
     category: "Web Development",
     viewLink: "https://sals3.com/",
-     tools: ["shopify", "Foxify", "Liquid"]
+     tools: ["wordpress", "elementor"]
   }
 ];
 
