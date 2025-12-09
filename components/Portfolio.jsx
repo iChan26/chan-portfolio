@@ -18,9 +18,10 @@ import {
   SiCanva,
   SiAdobeaftereffects,
   SiSquarespace,
-   SiElementor,
-    SiWordpress,
-    SiShopify
+  SiElementor,
+  SiWordpress,
+  SiShopify,
+  SiWoocommerce
 } from "react-icons/si";
 import { FiLayers } from "react-icons/fi";
 
@@ -36,14 +37,15 @@ const toolIcons = {
   php: <SiPhp className="text-lg" title="PHP" />,
   mysql: <SiMysql className="text-lg" title="MySQL" />,
   hostinger: <SiHostinger className="text-lg" title="Hostinger" />,
-    googleanalytics: <SiGoogleanalytics className="text-lg" title="Google Analytics" />,
+  googleanalytics: <SiGoogleanalytics className="text-lg" title="Google Analytics" />,
   yoast: <SiYoast className="text-lg" title="Yoast SEO" />,
   canva: <SiCanva className="text-lg" title="Canva" />,
-   aftereffects: <SiAdobeaftereffects className="text-lg" title="After Effects" />,
-    squarespace: <SiSquarespace className="text-lg" title="Squarespace" />,
-    elementor: <SiElementor className="text-lg" title="Elementor" />,
-    wordpress: <SiWordpress className="text-lg" title="WordPress" />,
-    shopify: <SiShopify className="text-lg" title="Shopify" />,
+  aftereffects: <SiAdobeaftereffects className="text-lg" title="After Effects" />,
+  squarespace: <SiSquarespace className="text-lg" title="Squarespace" />,
+  elementor: <SiElementor className="text-lg" title="Elementor" />,
+  wordpress: <SiWordpress className="text-lg" title="WordPress" />,
+  shopify: <SiShopify className="text-lg" title="Shopify" />,
+  woocommerce: <SiWoocommerce className="text-lg" title="WooCommerce" />,
 
   divi: (
   <span title="Divi">
@@ -426,7 +428,7 @@ const allProjects = [
     description: "Lifestyle Store – Web Development",
     category: "Web Development",
     viewLink: "https://sals3.com/",
-     tools: ["wordpress", "elementor"]
+     tools: ["wordpress", "elementor", "woocommerce"]
   }
 ];
 
