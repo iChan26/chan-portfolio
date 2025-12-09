@@ -23,6 +23,7 @@ import {
   SiElementor,
   SiGoogleanalytics,
   SiHostinger,
+  SiWoocommerce,
 } from "react-icons/si";
 import { FiLayers } from "react-icons/fi";
 import { FaRegCalendarAlt, FaServer} from "react-icons/fa";
@@ -160,6 +161,7 @@ const Resume = () => {
     { name: "Tailwind", icon: <SiTailwindcss className="text-black text-xl" /> },
     { name: "Liquid",icon: (<img src="/svg/liquid.svg" alt="Liquid" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "Elementor", icon: <SiElementor className="text-black text-xl" /> },
+    { name: "WooCommerce", icon: <SiWoocommerce className="text-black text-xl" /> },
     { name: "Divi",icon: (<img src="/svg/Divi.svg" alt="Divi" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "Gutenberg",icon: (<img src="/svg/Gutenberg.svg" alt="Gutenberg" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
     { name: "WPBakery",icon: (<img src="/svg/wpbakery.svg" alt="WPBakery" className="w-6 h-6 brightness-0 pointer-events-none select-none" draggable="false" onContextMenu={(e) => e.preventDefault()}/>),},
