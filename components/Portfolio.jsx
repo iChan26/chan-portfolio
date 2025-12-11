@@ -1,6 +1,8 @@
-import React, { useState } from "react";
-import { FaEye, FaCode, FaFigma, FaReact} from "react-icons/fa";
-import { motion } from "framer-motion";
+"use client";
+
+import React, { useEffect, useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaEye } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiReact,
@@ -21,10 +23,11 @@ import {
   SiElementor,
   SiWordpress,
   SiShopify,
-  SiWoocommerce
+  SiWoocommerce,
 } from "react-icons/si";
 import { FiLayers } from "react-icons/fi";
 
+/* ---------- toolIcons (kept from your list) ---------- */
 const toolIcons = {
   nextjs: <SiNextdotjs className="text-lg" title="Next.js" />,
   react: <SiReact className="text-lg" title="React" />,
@@ -46,106 +49,99 @@ const toolIcons = {
   wordpress: <SiWordpress className="text-lg" title="WordPress" />,
   shopify: <SiShopify className="text-lg" title="Shopify" />,
   woocommerce: <SiWoocommerce className="text-lg" title="WooCommerce" />,
-
   divi: (
-  <span title="Divi">
-    <img
-      src="/svg/Divi.svg"
-      alt="Divi"
-      className="w-6 h-6 pointer-events-none select-none"
-      draggable="false"
-      onContextMenu={(e) => e.preventDefault()}
-      style={{
-        filter:
-          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
-      }}
-    />
-  </span>
-),
-wpbakery: (
-  <span title="WPBakery">
-    <img
-      src="/svg/wpbakery.svg"
-      alt="WPBakery"
-      className="w-6 h-6 pointer-events-none select-none"
-      draggable="false"
-      onContextMenu={(e) => e.preventDefault()}
-      style={{
-        filter:
-          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
-      }}
-    />
-  </span>
-),
-
- GoHighLevel: (
-  <span title="GoHighLevel">
-    <img
-      src="/svg/gohighlevel.svg"
-      alt="GoHighLevel"
-      className="w-6 h-6 pointer-events-none select-none"
-      draggable="false"
-      onContextMenu={(e) => e.preventDefault()}
-      style={{
-        filter:
-          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
-      }}
-    />
-  </span>
-),
-
-Shogun: (
-  <span title="Shogun">
-    <img
-      src="/svg/shogun.svg"
-      alt="Shogun"
-      className="w-6 h-6 pointer-events-none select-none"
-      draggable="false"
-      onContextMenu={(e) => e.preventDefault()}
-      style={{
-        filter:
-          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
-      }}
-    />
-  </span>
-),
-
-Foxify: (
-  <span title="Foxify">
-    <img
-      src="/svg/foxify.svg"
-      alt="Foxify"
-      className="w-6 h-6 pointer-events-none select-none"
-      draggable="false"
-      onContextMenu={(e) => e.preventDefault()}
-      style={{
-        filter:
-          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
-      }}
-    />
-  </span>
-),
-
-Liquid: (
-  <span title="Liquid">
-    <img
-      src="/svg/liquid.svg"
-      alt="Liquid"
-      className="w-6 h-6 pointer-events-none select-none"
-      draggable="false"
-      onContextMenu={(e) => e.preventDefault()}
-      style={{
-        filter:
-          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)',
-      }}
-    />
-  </span>
-),
+    <span title="Divi">
+      <img
+        src="/svg/Divi.svg"
+        alt="Divi"
+        className="w-6 h-6 pointer-events-none select-none"
+        draggable="false"
+        onContextMenu={(e) => e.preventDefault()}
+        style={{
+          filter:
+            "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)",
+        }}
+      />
+    </span>
+  ),
+  wpbakery: (
+    <span title="WPBakery">
+      <img
+        src="/svg/wpbakery.svg"
+        alt="WPBakery"
+        className="w-6 h-6 pointer-events-none select-none"
+        draggable="false"
+        onContextMenu={(e) => e.preventDefault()}
+        style={{
+          filter:
+            "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)",
+        }}
+      />
+    </span>
+  ),
+  GoHighLevel: (
+    <span title="GoHighLevel">
+      <img
+        src="/svg/gohighlevel.svg"
+        alt="GoHighLevel"
+        className="w-6 h-6 pointer-events-none select-none"
+        draggable="false"
+        onContextMenu={(e) => e.preventDefault()}
+        style={{
+          filter:
+            "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)",
+        }}
+      />
+    </span>
+  ),
+  Shogun: (
+    <span title="Shogun">
+      <img
+        src="/svg/shogun.svg"
+        alt="Shogun"
+        className="w-6 h-6 pointer-events-none select-none"
+        draggable="false"
+        onContextMenu={(e) => e.preventDefault()}
+        style={{
+          filter:
+            "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)",
+        }}
+      />
+    </span>
+  ),
+  Foxify: (
+    <span title="Foxify">
+      <img
+        src="/svg/foxify.svg"
+        alt="Foxify"
+        className="w-6 h-6 pointer-events-none select-none"
+        draggable="false"
+        onContextMenu={(e) => e.preventDefault()}
+        style={{
+          filter:
+            "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)",
+        }}
+      />
+    </span>
+  ),
+  Liquid: (
+    <span title="Liquid">
+      <img
+        src="/svg/liquid.svg"
+        alt="Liquid"
+        className="w-6 h-6 pointer-events-none select-none"
+        draggable="false"
+        onContextMenu={(e) => e.preventDefault()}
+        style={{
+          filter:
+            "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(103%)",
+        }}
+      />
+    </span>
+  ),
 };
 
-
-
-// All project data
+/* ---------- projects (copied from your list) ---------- */
 const allProjects = [
   {
     title: "Reedemer Hospice",
@@ -153,31 +149,31 @@ const allProjects = [
     description: "Reedemer Hospice – Web Development",
     category: "Web Development",
     viewLink: "https://redeemerhospice.com/",
-     tools: ["wordpress", "elementor", "html", "javascript"]
-  }, 
+    tools: ["wordpress", "elementor", "html", "javascript"],
+  },
   {
     title: "WeBuilt AI Agents",
     image: "/img/Web Development/WeBuilt.webp",
     description: "Deploy AI Agents – Frontend/Web Design",
     category: "Web Development",
     viewLink: "https://app.gohighlevel.com/v2/preview/dFp5wWMfb2kkwa1xxKO4#col-6u7nxbS48p",
-     tools: ["GoHighLevel", "html", "css", "javascript"]
-  }, 
-   {
+    tools: ["GoHighLevel", "html", "css", "javascript"],
+  },
+  {
     title: "The Shift Method™",
     image: "/img/Web Development/The Shift Method™.webp",
     description: "Shift Toolkit – Web Development",
     category: "Web Development",
     viewLink: "https://theshiftteam.com/",
-     tools: ["shopify", "Liquid", "html", "javascript"]
-  }, 
+    tools: ["shopify", "Liquid", "html", "javascript"],
+  },
   {
     title: "I&A Jewelry",
     image: "/img/Web Development/ia-international-square.webp",
     description: "Luxury Redefined – Next.Js/Web Design",
     category: "Web Development",
     viewLink: "https://ia-international.vercel.app/",
-    tools: ["nextjs", "tailwind", "vercel"]
+    tools: ["nextjs", "tailwind", "vercel"],
   },
   {
     title: "UDS Logo",
@@ -193,7 +189,7 @@ const allProjects = [
     description: "Medical equipment Informational Site - Web Development",
     category: "Web Development",
     viewLink: "https://borderdme.com/",
-    tools: ["wordpress", "elementor","html", "javascript"]
+    tools: ["wordpress", "elementor", "html", "javascript"],
   },
   {
     title: "Blue Sky Company SEO Performance",
@@ -201,7 +197,7 @@ const allProjects = [
     description: "Before & After SEO Optimization Report",
     category: "SEO Works",
     viewLink: "/img/SEO Works/Blue sky company SEO.webp",
-    tools: ["googleanalytics", "yoast"]
+    tools: ["googleanalytics", "yoast"],
   },
   {
     title: "Calming Bites",
@@ -209,7 +205,7 @@ const allProjects = [
     description: "Product packaging and marketing design",
     category: "Digital Marketing",
     viewLink: "/img/Digital Marketing/CalmingBites.webp",
-    tools: ["canva"]
+    tools: ["canva"],
   },
   {
     title: "Car Rental UI",
@@ -217,7 +213,7 @@ const allProjects = [
     description: "Landing page UI for car rental",
     category: "Web Development",
     viewLink: "https://indoz-cars.vercel.app/",
-    tools: ["react", "tailwind", "vercel"]
+    tools: ["react", "tailwind", "vercel"],
   },
   {
     title: "New Sneakers Collection",
@@ -225,7 +221,7 @@ const allProjects = [
     description: "Promotional graphic for Sneakers Collection",
     category: "Graphic Designs",
     viewLink: "/img/Graphic Designs/New Sneakers Collection 1.webp",
-    tools: ["canva"]
+    tools: ["canva"],
   },
   {
     title: "Dental Billing",
@@ -233,23 +229,23 @@ const allProjects = [
     description: "Marketing graphic for healthcare SaaS",
     category: "Digital Marketing",
     viewLink: "/img/Digital Marketing/Dental Billing Poster 1.webp",
-     tools: ["canva", "photoshop"]
+    tools: ["canva", "photoshop"],
   },
-   {
+  {
     title: "Brad's Services",
     video: "/vid/Digital Marketing/SING LIKE NEVER BEFORE – TRANSFORM YOUR VOICE!.webm",
     description: "Promoting Brad's Vocal Coaching Servicing",
     category: "Digital Marketing",
     viewLink: "/vid/Digital Marketing/SING LIKE NEVER BEFORE – TRANSFORM YOUR VOICE!.webm",
-     tools: ["aftereffects"]
+    tools: ["aftereffects"],
   },
-   {
+  {
     title: "Stephanie Blum Photography",
     image: "/img/Web Development/stephanie blum photography.webp",
     description: "Blogsite for Stephanie Blum",
     category: "Web Development",
     viewLink: "https://www.stephanieblumphoto.com/",
-    tools: ["squarespace", "javascript", "html",]
+    tools: ["squarespace", "javascript", "html"],
   },
   {
     title: "Blue Sky Heating and Air",
@@ -257,7 +253,7 @@ const allProjects = [
     description: "Promoting Blue Sky Heating and Air",
     category: "Digital Marketing",
     viewLink: "/img/Digital Marketing/Blue Sky Heating and Air LLC.webp",
-     tools: ["canva"]
+    tools: ["canva"],
   },
   {
     title: "Brad's Services",
@@ -265,7 +261,7 @@ const allProjects = [
     description: "Promoting Brad's Vocal Coaching Servicing",
     category: "Digital Marketing",
     viewLink: "/vid/Digital Marketing/Radical Vocal Breakthrough with Brad Chapman.webm",
-    tools: ["aftereffects"]
+    tools: ["aftereffects"],
   },
   {
     title: "Queuedial Company SEO Performance",
@@ -273,7 +269,7 @@ const allProjects = [
     description: "Before & After SEO Optimization Report",
     category: "SEO Works",
     viewLink: "/img/SEO Works/Queuedial SEO.webp",
-    tools: ["googleanalytics", "yoast"]
+    tools: ["googleanalytics", "yoast"],
   },
   {
     title: "Rita's Marketing",
@@ -281,7 +277,7 @@ const allProjects = [
     description: "Promoting Rita's Products",
     category: "Digital Marketing",
     viewLink: "/vid/Digital Marketing/Rita's Marketing.webm",
-    tools: ["canva"]
+    tools: ["canva"],
   },
   {
     title: "EuroElektra - Empowered by Innovation",
@@ -289,7 +285,7 @@ const allProjects = [
     description: "EuroElektra – Web Development",
     category: "Web Development",
     viewLink: "https://euroelektra.vercel.app/",
-    tools: ["nextjs", "tailwind", "vercel"]
+    tools: ["nextjs", "tailwind", "vercel"],
   },
   {
     title: "Skin & Coat",
@@ -297,7 +293,7 @@ const allProjects = [
     description: "Product packaging and marketing design",
     category: "Digital Marketing",
     viewLink: "/img/Digital Marketing/Skin&Coat.webp",
-    tools: ["canva"]
+    tools: ["canva"],
   },
   {
     title: "Zen Diamond - Luxury",
@@ -305,7 +301,7 @@ const allProjects = [
     description: "Zen Diamond – Web Development",
     category: "Web Development",
     viewLink: "https://zen-diamond.co.uk/",
-    tools: ["wordpress", "elementor","html","javascript"]
+    tools: ["wordpress", "elementor", "html", "javascript"],
   },
   {
     title: "GCM Youth Fellowship",
@@ -313,7 +309,7 @@ const allProjects = [
     description: "Poster Event for GCM",
     category: "Digital Marketing",
     viewLink: "/img/Graphic Designs/GCM Event 1.webp",
-    tools: ["canva", "photoshop"]
+    tools: ["canva", "photoshop"],
   },
   {
     title: "Blue Sky Heating and Air LLC",
@@ -321,7 +317,7 @@ const allProjects = [
     description: "Promoting Blue Sky Heating and Air LLC",
     category: "Digital Marketing",
     viewLink: "/vid/Digital Marketing/Blue Sky Heating and Air LLC.webm",
-     tools: ["canva"]
+    tools: ["canva"],
   },
   {
     title: "Dad's Wallet Finance",
@@ -329,15 +325,15 @@ const allProjects = [
     description: "Dad's Wallet – Web Development/SEO",
     category: "Web Development",
     viewLink: "https://dadswallet.com.au/",
-    tools: ["wordpress", "wpbakery", "yoast"]
-  },    
+    tools: ["wordpress", "wpbakery", "yoast"],
+  },
   {
     title: "Brad's Services",
     video: "/vid/Digital Marketing/Your Voice, Your Power – Train with Brad Chapman.webm",
     description: "Promoting Brad's Vocal Coaching Servicing",
     category: "Digital Marketing",
     viewLink: "/vid/Digital Marketing/Your Voice, Your Power – Train with Brad Chapman.webm",
-    tools: ["aftereffects"]
+    tools: ["aftereffects"],
   },
   {
     title: "UDS Logo",
@@ -345,8 +341,7 @@ const allProjects = [
     description: "Brand identity for Unique Digital Solution",
     category: "Graphic Designs",
     viewLink: "/img/Graphic Designs/UDS2.webp",
-    tools: ["photoshop"]
-    
+    tools: ["photoshop"],
   },
   {
     title: "New Sneakers Collection",
@@ -354,7 +349,7 @@ const allProjects = [
     description: "Promotional graphic for Sneakers Collection",
     category: "Graphic Designs",
     viewLink: "/img/Graphic Designs/New Sneakers Collection 2.webp",
-    tools: ["canva"]
+    tools: ["canva"],
   },
   {
     title: "CityHill Church - Official Site",
@@ -362,15 +357,15 @@ const allProjects = [
     description: "CityHill Church – Web Development",
     category: "Web Development",
     viewLink: "https://cityhillchurch.co.za/",
-    tools: ["wordpress", "divi","html", "javascript"]
-  },   
+    tools: ["wordpress", "divi", "html", "javascript"],
+  },
   {
     title: "Dental Billing",
     image: "/img/Digital Marketing/Dental Billing Poster 2.webp",
     description: "Marketing graphic for healthcare SaaS",
     category: "Digital Marketing",
     viewLink: "/img/Digital Marketing/Dental Billing Poster 2.webp",
-    tools: ["photoshop","canva"]
+    tools: ["photoshop", "canva"],
   },
   {
     title: "Border Store - Medical Equipment",
@@ -378,23 +373,23 @@ const allProjects = [
     description: "Medical Equipment Store – Web Development",
     category: "Web Development",
     viewLink: "https://www.bordersleep.com/",
-     tools: ["shopify", "Shogun","html", "Liquid"]
-  },  
+    tools: ["shopify", "Shogun", "html", "Liquid"],
+  },
   {
     title: "Small Business Enterprise Center",
     image: "/img/Web Development/Small Business.webp",
     description: "Small Business – Web Development",
     category: "Web Development",
     viewLink: "https://app.gohighlevel.com/v2/preview/Il9wA6FxqN6HxzSGT9bk",
-    tools: ["GoHighLevel", "html", "javascript"]
-  },   
+    tools: ["GoHighLevel", "html", "javascript"],
+  },
   {
     title: "Elite Drip",
     video: "/vid/Digital Marketing/Facebook ads Animated.webm",
     description: "Promoting Elite Drip's Clothes",
     category: "Digital Marketing",
     viewLink: "/vid/Digital Marketing/Facebook ads Animated.webm",
-    tools: ["canva"]
+    tools: ["canva"],
   },
   {
     title: "Dental Billing Innovative – Outsourcing",
@@ -402,7 +397,7 @@ const allProjects = [
     description: "Dental Billing – Web Development",
     category: "Web Development",
     viewLink: "https://dentalbillingin.com/",
-    tools: ["wordpress", "elementor","html", "php"]
+    tools: ["wordpress", "elementor", "html", "php"],
   },
   {
     title: "UDS Logo",
@@ -410,17 +405,15 @@ const allProjects = [
     description: "Brand identity for Unique Digital Solution",
     category: "Graphic Designs",
     viewLink: "/img/Graphic Designs/UDS3.webp",
-    tools: ["photoshop"]
-    
+    tools: ["photoshop"],
   },
-   {
+  {
     title: "Artificial Intelligence Logo",
     image: "/img/Graphic Designs/AI Logo.webp",
     description: "Logo Brand for Artificial Intelligence",
     category: "Graphic Designs",
     viewLink: "/img/Graphic Designs/AI Logo.webp",
-    tools: ["photoshop"]
-    
+    tools: ["photoshop"],
   },
   {
     title: "SALS3 - Lifestyle Shopping",
@@ -428,169 +421,336 @@ const allProjects = [
     description: "Lifestyle Store – Web Development",
     category: "Web Development",
     viewLink: "https://sals3.com/",
-     tools: ["wordpress", "elementor", "woocommerce"]
-  }
+    tools: ["wordpress", "elementor", "woocommerce"],
+  },
 ];
 
+/* ---------- categories ---------- */
 const categories = ["All", "Graphic Designs", "Web Development", "SEO Works", "Digital Marketing"];
 
-const PortfolioSection = () => {
+/* ---------- helper: compact page range with ellipsis ---------- */
+function getPageRange(page, total, maxButtons = 5) {
+  if (total <= maxButtons) return Array.from({ length: total }, (_, i) => i + 1);
+  const half = Math.floor(maxButtons / 2);
+  let start = Math.max(1, page - half);
+  let end = Math.min(total, page + half);
+  if (page - start < half) end = Math.min(total, start + maxButtons - 1);
+  if (end - page < half) start = Math.max(1, end - maxButtons + 1);
+  const range = [];
+  for (let i = start; i <= end; i++) range.push(i);
+  if (start > 2) {
+    range.unshift("...");
+    range.unshift(1);
+  } else if (start === 2) {
+    range.unshift(1);
+  }
+  if (end < total - 1) {
+    range.push("...");
+    range.push(total);
+  } else if (end === total - 1) {
+    range.push(total);
+  }
+  return range;
+}
+
+/* ---------- PortfolioSection component ---------- */
+export default function PortfolioSection({ itemsPerPage = 6 }) {
+  const [projects, setProjects] = useState(allProjects);
+  const [loading, setLoading] = useState(false);
+  const [liveError, setLiveError] = useState(null);
+  const [isLive, setIsLive] = useState(false);
+
   const [activeCategory, setActiveCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const filteredProjects =
-    activeCategory === "All"
-      ? allProjects
-      : allProjects.filter((p) => p.category === activeCategory);
+  // Try to fetch live portfolio data (non-blocking). If it fails, we'll keep local data.
+  useEffect(() => {
+    let mounted = true;
+    async function fetchLive() {
+      setLoading(true);
+      setLiveError(null);
+      try {
+        const res = await fetch("/api/portfolio");
+        if (!res.ok) throw new Error(`Status ${res.status}`);
+        const data = await res.json();
+        if (!mounted) return;
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(data);
+          setIsLive(true);
+        }
+      } catch (err) {
+        // fallback try sample endpoint
+        try {
+          const res2 = await fetch("/api/portfolio?sample=true");
+          if (res2.ok) {
+            const d2 = await res2.json();
+            if (mounted && Array.isArray(d2) && d2.length > 0) {
+              setProjects(d2);
+              setIsLive(true);
+            }
+          } else {
+            if (mounted) setLiveError(String(err));
+          }
+        } catch (err2) {
+          if (mounted) setLiveError(String(err2));
+        }
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    }
 
+    fetchLive();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  // Filtered projects
+  const filtered = useMemo(() => {
+    if (activeCategory === "All") return projects;
+    return projects.filter((p) => p.category === activeCategory);
+  }, [projects, activeCategory]);
+
+  // pagination
+  const totalItems = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
+
+  // Reset to page 1 when category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory]);
+
+  // clamp currentPage
+  useEffect(() => {
+    if (currentPage > totalPages) setCurrentPage(totalPages);
+    if (currentPage < 1) setCurrentPage(1);
+  }, [totalPages, currentPage]);
+
+  const start = (currentPage - 1) * itemsPerPage;
+  const pageItems = filtered.slice(start, start + itemsPerPage);
+
+  // Motion variants
+  const gridVariants = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.06 } },
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 16, scale: 0.98 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45, ease: "easeOut" } },
+  };
+
+  // render
   return (
-
-<section id="portfolio" className="bg-[#0d0c0c] py-20 px-4 sm:px-6">
-  <div className="max-w-screen-xl mx-auto text-center">
-    {/* Section Heading */}
-    <motion.h2
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="text-black text-2xl sm:text-3xl lg:text-6xl font-extrabold mb-10"
-    >
-      <span className="text-white font-extrabold">My</span>{" "}
-      <span className="text-yellow-500 font-extrabold">Portfolio</span>
-    </motion.h2>
-
-    {/* Category Tabs */}
-    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 text-xs sm:text-base font-semibold">
-      {categories.map((category) => (
-        <button
-          key={category}
-          onClick={() => setActiveCategory(category)}
-          className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-b-2 transition-all duration-200 ${
-            activeCategory === category
-              ? "border-yellow-500 text-yellow-500"
-              : "border-transparent text-white hover:text-yellow-500"
-          }`}
+    <section id="portfolio" className="bg-[#0d0c0c] py-20 px-4 sm:px-6">
+      <div className="max-w-screen-xl mx-auto text-center">
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl sm:text-3xl lg:text-6xl font-extrabold mb-4"
         >
-          {category}
-        </button>
-      ))}
-    </div>
+          <span className="text-white">My</span>{" "}
+          <span className="text-yellow-500">Portfolio</span>
+        </motion.h2>
 
-    {/* Projects Grid with Smooth Zoom + Fade Animation */}
-    <motion.div
-      key={activeCategory} // re-triggers animation when category changes
-      initial="hidden"
-      animate="show"
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.12,
-          },
-        },
-      }}
-      className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 sm:gap-8"
-    >
-      {filteredProjects.map((project, index) => (
-        <motion.div
-          key={index}
-          variants={{
-            hidden: { opacity: 0, scale: 0.9, y: 25 },
-            show: {
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="relative bg-white rounded-lg overflow-hidden border shadow-lg group transition-transform duration-300 hover:scale-[1.02]"
-        >
-          {/* Media area */}
-          <div className="relative z-10 h-[250px] sm:h-[300px] md:h-[350px]">
-            {project.video ? (
-              <video
-                src={project.video}
-                className="w-full h-full object-cover transition duration-300"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            ) : (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition duration-300"
-              />
-            )}
+        {/* Live status */}
+        <div className="flex items-center justify-center gap-3 mb-6">
+          {loading ? (
+            <div className="text-xs text-slate-300">Loading projects…</div>
+          ) : isLive ? (
+            <div className="inline-flex items-center gap-2 text-xs bg-green-700/20 px-3 py-1 rounded-full border border-green-600 text-green-200">
+              Live
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            </div>
+          ) : liveError ? (
+            <div className="text-xs text-rose-400">Live fetch failed</div>
+          ) : (
+            <div className="text-xs text-slate-400">Using local projects</div>
+          )}
+        </div>
 
-            {/* Overlay on hover */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 z-10" />
-
-            {/* Combined bottom panel */}
-            <div
-              className="absolute left-0 right-0 bottom-0 z-20
-                         transform translate-y-[65%] group-hover:translate-y-0
-                         transition-transform duration-300"
+        {/* Category Tabs */}
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 text-xs sm:text-base font-semibold">
+          {categories.map((c) => (
+            <button
+              key={c}
+              onClick={() => setActiveCategory(c)}
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 ${
+                activeCategory === c
+                  ? "bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 text-black shadow-lg"
+                  : "bg-transparent text-white border border-white/6 hover:bg-white/4"
+              }`}
+              aria-pressed={activeCategory === c}
             >
-              {/* Title */}
-              <div className="bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 text-black px-3 sm:px-4 py-2 sm:py-3 font-bold text-sm sm:text-base">
-                {project.title}
-              </div>
+              {c}
+            </button>
+          ))}
+        </div>
 
-              {/* Description + Buttons */}
-              <div className="bg-[#1e1e1e] px-3 sm:px-4 pb-4 pt-3 sm:pt-4">
-                <p className="text-white text-xs sm:text-sm mb-3 text-center">
-                  {project.description}
-                </p>
-
-                <div className="flex gap-2 sm:gap-3 w-full justify-center flex-wrap">
-                  {/* Tools */}
-                  {project.tools && project.tools.length > 0 && (
-                    <div className="flex-1 max-w-[120px] sm:max-w-[130px]">
-                      <div className="flex items-center justify-center gap-1 bg-black text-[10px] sm:text-xs py-1 sm:py-1.5 px-3 sm:px-4 rounded-full w-full h-8 sm:h-9 transition">
-                        {project.tools.map((tool, i) => (
-                          <span key={i} className="text-white">
-                            {toolIcons[tool]}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+        {/* Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`${activeCategory}-${currentPage}`}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            variants={gridVariants}
+            className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 sm:gap-8"
+          >
+            {pageItems.map((project, index) => (
+              <motion.article
+                key={project?.id ?? `${project.title}-${index}`}
+                variants={itemVariants}
+                className="relative bg-white/4 rounded-lg overflow-hidden border border-white/6 group transition-transform duration-300 hover:scale-[1.02]"
+                role="article"
+                aria-label={project.title}
+              >
+                <div className="relative z-10 h-[250px] sm:h-[300px] md:h-[350px]">
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      className="w-full h-full object-cover transition duration-300"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition duration-300"
+                    />
                   )}
 
-                  {/* View button */}
-                  <div className="flex-1 max-w-[120px] sm:max-w-[130px]">
-                    <a
-                      href={project.viewLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1 bg-black text-white text-[10px] sm:text-xs py-1 sm:py-1.5 px-3 sm:px-4 rounded-full w-full h-8 sm:h-9 hover:bg-yellow-400 hover:text-black transition"
-                    >
-                      <FaEye className="text-xs sm:text-sm" /> View
-                    </a>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 z-10" />
+
+                  <div
+                    className="absolute left-0 right-0 bottom-0 z-20
+                         transform translate-y-[65%] group-hover:translate-y-0
+                         transition-transform duration-300"
+                  >
+                    <div className="bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 text-black px-3 sm:px-4 py-2 sm:py-3 font-bold text-sm sm:text-base">
+                      {project.title}
+                    </div>
+
+                    <div className="bg-[#1e1e1e] px-3 sm:px-4 pb-4 pt-3 sm:pt-4">
+                      <p className="text-white text-xs sm:text-sm mb-3 text-center">
+                        {project.description}
+                      </p>
+
+                      <div className="flex gap-2 sm:gap-3 w-full justify-center flex-wrap">
+                        {project.tools && project.tools.length > 0 && (
+                          <div className="flex-1 max-w-[120px] sm:max-w-[130px]">
+                            <div className="flex items-center justify-center gap-1 bg-black text-[10px] sm:text-xs py-1 sm:py-1.5 px-3 sm:px-4 rounded-full w-full h-8 sm:h-9 transition">
+                              {project.tools.map((tool, i) => (
+                                <span key={i} className="text-white" title={tool}>
+                                  {toolIcons[tool] ?? tool}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        <div className="flex-1 max-w-[120px] sm:max-w-[130px]">
+                          <a
+                            href={project.viewLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-1 bg-black text-white text-[10px] sm:text-xs py-1 sm:py-1.5 px-3 sm:px-4 rounded-full w-full h-8 sm:h-9 hover:bg-yellow-400 hover:text-black transition"
+                            aria-label={`View ${project.title}`}
+                          >
+                            <FaEye className="text-xs sm:text-sm" /> View
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.article>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Empty state */}
+        {filtered.length === 0 && (
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }} className="text-gray-400 mt-6 text-center">
+            No projects found in this category.
+          </motion.p>
+        )}
+
+        {/* Pagination */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          {/* Info */}
+          <div className="text-sm text-slate-400">
+            Showing{" "}
+            <span className="text-white">
+              {totalItems === 0 ? 0 : start + 1}–{Math.min(start + itemsPerPage, totalItems)}
+            </span>{" "}
+            of <span className="text-white">{totalItems}</span> projects
           </div>
-        </motion.div>
-      ))}
-    </motion.div>
 
-    {/* Empty State */}
-    {filteredProjects.length === 0 && (
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="text-gray-400 mt-6 text-center"
-      >
-        No projects found in this category.
-      </motion.p>
-    )}
-  </div>
-</section>
+          {/* Controls */}
+          <nav className="flex items-center gap-2" aria-label="Pagination">
+            <button
+              onClick={() => setCurrentPage(1)}
+              disabled={currentPage === 1}
+              className="px-3 py-2 rounded-md text-xs sm:text-sm bg-transparent border border-white/6 text-white/80 disabled:opacity-40 hover:bg-white/6 transition"
+              aria-label="First page"
+            >
+              « First
+            </button>
 
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className="px-3 py-2 rounded-md text-xs sm:text-sm bg-transparent border border-white/6 text-white/80 disabled:opacity-40 hover:bg-white/6 transition"
+              aria-label="Previous page"
+            >
+              ‹ Prev
+            </button>
 
+            {/* Numbered pages */}
+            {getPageRange(currentPage, totalPages, 5).map((pg, idx) =>
+              pg === "..." ? (
+                <span key={`dots-${idx}`} className="px-3 py-2 text-xs sm:text-sm text-slate-400">
+                  …
+                </span>
+              ) : (
+                <button
+                  key={pg}
+                  onClick={() => setCurrentPage(pg)}
+                  aria-current={currentPage === pg ? "page" : undefined}
+                  className={`px-3 py-2 rounded-md text-xs sm:text-sm transition
+                    ${currentPage === pg ? "bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 text-black shadow-md" : "bg-transparent border border-white/6 text-white/80 hover:bg-white/6"}`}
+                  aria-label={`Page ${pg}`}
+                >
+                  {pg}
+                </button>
+              )
+            )}
+
+            <button
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              className="px-3 py-2 rounded-md text-xs sm:text-sm bg-transparent border border-white/6 text-white/80 disabled:opacity-40 hover:bg-white/6 transition"
+              aria-label="Next page"
+            >
+              Next ›
+            </button>
+
+            <button
+              onClick={() => setCurrentPage(totalPages)}
+              disabled={currentPage === totalPages}
+              className="px-3 py-2 rounded-md text-xs sm:text-sm bg-transparent border border-white/6 text-white/80 disabled:opacity-40 hover:bg-white/6 transition"
+              aria-label="Last page"
+            >
+              Last »
+            </button>
+          </nav>
+        </div>
+      </div>
+    </section>
   );
-};
-
-export default PortfolioSection;
+}
