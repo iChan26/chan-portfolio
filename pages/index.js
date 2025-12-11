@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/about";
 import Resume from "../components/Resume";
+import Featured from "../components/Featured";
 import Portfolio from "../components/Portfolio";
 import ContactMe from "../components/ContactMe";
 import Footer from "../components/Footer";
@@ -50,6 +51,7 @@ export default function Home() {
           <Hero />
           <About />
           <Resume />
+          <Featured />
           <Portfolio />
           <ContactMe />
           <Footer />

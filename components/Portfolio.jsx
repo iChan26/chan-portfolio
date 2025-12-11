@@ -27,6 +27,7 @@ import {
 } from "react-icons/si";
 import { FiLayers } from "react-icons/fi";
 
+
 /* ---------- toolIcons (kept from your list) ---------- */
 const toolIcons = {
   nextjs: <SiNextdotjs className="text-lg" title="Next.js" />,
@@ -300,8 +301,8 @@ const allProjects = [
     image: "/img/Web Development/zen-diamond.webp",
     description: "Zen Diamond – Web Development",
     category: "Web Development",
-    viewLink: "https://zen-diamond.co.uk/",
-    tools: ["wordpress", "elementor", "html", "javascript"],
+    viewLink: "https://us.zendiamond.com/",
+    tools: ["shopify", "Liquid", "html", "javascript"],
   },
   {
     title: "GCM Youth Fellowship",
