@@ -242,7 +242,7 @@ export default function ChatWidget() {
                     value={userEmail}
                     onChange={(e) => setUserEmail(e.target.value)}
                     placeholder="your@gmail.com"
-                    className="w-full text-sm px-3 py-2 rounded-md border border-gray-300 focus:outline-none"
+                    className="w-full text-sm text-black x-3 py-2 rounded-md border border-gray-300 focus:outline-none"
                   />
                   <button
                     onClick={() => {
