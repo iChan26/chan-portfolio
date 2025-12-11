@@ -554,7 +554,7 @@ export default function PortfolioSection({ itemsPerPage = 6 }) {
           <span className="text-yellow-500">Portfolio</span>
         </motion.h2>
 
-        {/* Live status */}
+        {/* Live status 
         <div className="flex items-center justify-center gap-3 mb-6">
           {loading ? (
             <div className="text-xs text-slate-300">Loading projects…</div>
@@ -568,7 +568,7 @@ export default function PortfolioSection({ itemsPerPage = 6 }) {
           ) : (
             <div className="text-xs text-slate-400">Using local projects</div>
           )}
-        </div>
+        </div> */}
 
         {/* Category Tabs */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 text-xs sm:text-base font-semibold">
@@ -680,76 +680,93 @@ export default function PortfolioSection({ itemsPerPage = 6 }) {
           </motion.p>
         )}
 
-        {/* Pagination */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          {/* Info */}
-          <div className="text-sm text-slate-400">
-            Showing{" "}
-            <span className="text-white">
-              {totalItems === 0 ? 0 : start + 1}–{Math.min(start + itemsPerPage, totalItems)}
-            </span>{" "}
-            of <span className="text-white">{totalItems}</span> projects
-          </div>
+      {/* Pagination */}
+<div className="mt-12 flex flex-col gap-4">
 
-          {/* Controls */}
-          <nav className="flex items-center gap-2" aria-label="Pagination">
-            <button
-              onClick={() => setCurrentPage(1)}
-              disabled={currentPage === 1}
-              className="px-3 py-2 rounded-md text-xs sm:text-sm bg-transparent border border-white/6 text-white/80 disabled:opacity-40 hover:bg-white/6 transition"
-              aria-label="First page"
-            >
-              « First
-            </button>
+  {/* Info */}
+  <div className="text-center sm:text-left text-sm text-slate-400">
+    Showing{" "}
+    <span className="text-white">
+      {totalItems === 0 ? 0 : start + 1}–{Math.min(start + itemsPerPage, totalItems)}
+    </span>{" "}
+    of <span className="text-white">{totalItems}</span> projects
+  </div>
 
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={currentPage === 1}
-              className="px-3 py-2 rounded-md text-xs sm:text-sm bg-transparent border border-white/6 text-white/80 disabled:opacity-40 hover:bg-white/6 transition"
-              aria-label="Previous page"
-            >
-              ‹ Prev
-            </button>
+  {/* Controls */}
+  <nav
+    aria-label="Pagination"
+    className="flex flex-col sm:flex-row items-center justify-between gap-4"
+  >
+    {/* Left buttons */}
+    <div className="flex items-center gap-2">
 
-            {/* Numbered pages */}
-            {getPageRange(currentPage, totalPages, 5).map((pg, idx) =>
-              pg === "..." ? (
-                <span key={`dots-${idx}`} className="px-3 py-2 text-xs sm:text-sm text-slate-400">
-                  …
-                </span>
-              ) : (
-                <button
-                  key={pg}
-                  onClick={() => setCurrentPage(pg)}
-                  aria-current={currentPage === pg ? "page" : undefined}
-                  className={`px-3 py-2 rounded-md text-xs sm:text-sm transition
-                    ${currentPage === pg ? "bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 text-black shadow-md" : "bg-transparent border border-white/6 text-white/80 hover:bg-white/6"}`}
-                  aria-label={`Page ${pg}`}
-                >
-                  {pg}
-                </button>
-              )
-            )}
+      {/* First */}
+      <button
+        onClick={() => setCurrentPage(1)}
+        disabled={currentPage === 1}
+        className="pagination-btn"
+      >
+        « First
+      </button>
 
-            <button
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              disabled={currentPage === totalPages}
-              className="px-3 py-2 rounded-md text-xs sm:text-sm bg-transparent border border-white/6 text-white/80 disabled:opacity-40 hover:bg-white/6 transition"
-              aria-label="Next page"
-            >
-              Next ›
-            </button>
+      {/* Prev */}
+      <button
+        onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+        disabled={currentPage === 1}
+        className="pagination-btn"
+      >
+        ‹ Prev
+      </button>
+    </div>
 
-            <button
-              onClick={() => setCurrentPage(totalPages)}
-              disabled={currentPage === totalPages}
-              className="px-3 py-2 rounded-md text-xs sm:text-sm bg-transparent border border-white/6 text-white/80 disabled:opacity-40 hover:bg-white/6 transition"
-              aria-label="Last page"
-            >
-              Last »
-            </button>
-          </nav>
-        </div>
+    {/* Numbered Pages – Mobile scrollable pills */}
+    <div className="flex overflow-x-auto scrollbar-hide sm:overflow-visible sm:flex-wrap gap-2 px-2 py-1 rounded-xl bg-white/5 backdrop-blur-md border border-white/10">
+      {getPageRange(currentPage, totalPages, 5).map((pg, i) =>
+        pg === "..." ? (
+          <span
+            key={i}
+            className="text-slate-400 px-3 py-2 text-sm select-none"
+          >
+            …
+          </span>
+        ) : (
+          <button
+            key={pg}
+            onClick={() => setCurrentPage(pg)}
+            aria-current={currentPage === pg ? "page" : undefined}
+            className={`pagination-number ${
+              currentPage === pg ? "active" : ""
+            }`}
+          >
+            {pg}
+          </button>
+        )
+      )}
+    </div>
+
+    {/* Right buttons */}
+    <div className="flex items-center gap-2">
+      {/* Next */}
+      <button
+        onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+        disabled={currentPage === totalPages}
+        className="pagination-btn"
+      >
+        Next ›
+      </button>
+
+      {/* Last */}
+      <button
+        onClick={() => setCurrentPage(totalPages)}
+        disabled={currentPage === totalPages}
+        className="pagination-btn"
+      >
+        Last »
+      </button>
+    </div>
+  </nav>
+</div>
+
       </div>
     </section>
   );
